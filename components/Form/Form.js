@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -12,14 +12,15 @@ import _ from 'lodash';
 import { createForm } from 'final-form';
 import { Form, Field } from 'react-final-form';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import { Header, Icon } from 'react-native-elements';
+import { Divider, Button, Header, Icon } from 'react-native-elements';
 import Input from './Input';
 import Error from './Error';
 import AddField from './AddField';
 import FormButton from './FormButton';
-import fields from './schema.json';
 
-const onSubmit = values => {
+import api from '../../services/api';
+
+const onSubmit = async values => {
   const schema = Object.keys(values).map((fieldName) => ({
     type: 'input',
     name: fieldName,
@@ -28,7 +29,9 @@ const onSubmit = values => {
     constraints: []
   }));
 
-  console.log('submit', schema);
+  console.log('schema', schema);
+
+  await api.set(schema);
 }
 
 const required = (value) => value ? undefined : 'required';
@@ -38,16 +41,22 @@ const Label = ({ name }) => (
   <Text style={styles.label}>{_.startCase(name)}</Text>
 )
 
-const App = () => {
-  const [inputs, setInputs] = useState(fields);
-  const [modalVisible, setModalVisible] = useState(false);
-  const initialValues = inputs.reduce((values, curr) => ({ ...values, [curr.name]: curr.initialValue }), {})
+const App = (props) => {
+  const { fields = [] } = props;
 
-  const form = createForm({
-    onSubmit,
-    initialValues,
-    subscription: { submitting: true }
-  });
+  const [inputs, setInputs] = useState(fields);
+  useEffect(() => {
+    setInputs(fields);
+  }, [fields])
+
+  const [modalVisible, setModalVisible] = useState(false);
+  const initialValues = inputs.reduce((values, { name, initialValue}) => ({ ...values, [name]: initialValue }), {})
+
+  // const form = createForm({
+  //   onSubmit,
+  //   initialValues,
+  //   subscription: { submitting: true }
+  // });
 
   const addField = ({ name, placeholder, initialValue }) => {
     const newInputs = [
@@ -62,17 +71,16 @@ const App = () => {
     ]
 
     setInputs(newInputs);
-
-    if (initialValue) {
-      form.change(name, initialValue);
-    }
-
     setModalVisible(false);
   }
 
   return (
     <>
-      <Form form={form}>
+      <Form
+        onSubmit={onSubmit}
+        initialValues={initialValues}
+        subscription={{ submitting: true }}
+      >
         {({
           handleSubmit,
           form,
@@ -111,7 +119,7 @@ const App = () => {
               style={styles.container}
             >
               <SafeAreaView>
-                {inputs.map(props => {
+                {_.reject(inputs, ({ name }) => name === 'form_name').map(props => {
                   const { name, constraints } = props;
 
                   return (
@@ -142,8 +150,8 @@ const App = () => {
                 <FormButton
                   label="Add Field"
                   onPress={() => { setModalVisible(true); }}
-                  style={styles.submit}
-                  labelStyle={{ fontSize: 20 }}
+                  style={styles.fieldButton}
+                  labelStyle={{ fontSize: 20, color: '#679b9b' }}
                 />
               </SafeAreaView>
             </ScrollView>
@@ -154,7 +162,7 @@ const App = () => {
                 )}
               </FormSpy>
             </View> */}
-            
+            <Divider style={{ backgroundColor: 'lightgray' }} />
             <View style={styles.footer}>
               <FormButton
                 label="Submit"
@@ -178,6 +186,18 @@ const App = () => {
           Alert.alert("Modal has been closed.");
         }}
       >
+        <Header
+          containerStyle={{ borderBottomWidth: undefined }}
+          backgroundColor="#fff"
+          leftComponent={(
+            <Icon
+              name='clear'
+              type='material-icons'
+              color='#4d80e4'
+              onPress={() => { setModalVisible(false); }}
+            />
+          )}
+        />
         <AddField onAdd={addField} />
       </Modal>
     </>
@@ -206,6 +226,12 @@ const styles = StyleSheet.create({
     color: '#4d80e4',
     padding: 0,
     marginLeft: 0,
+  },
+
+  fieldButton: {
+    backgroundColor: '#fbfefd',
+    borderColor: '#679b9b',
+    borderWidth: 2,
   },
 
   fieldHeader: {
