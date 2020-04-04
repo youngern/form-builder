@@ -18,37 +18,38 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 const Input = React.forwardRef((props, ref) => {
   const { checked, name, error, ...rest } = props;
   return (
-    <>
-      <TextInput
-        {...rest}
-        ref={ref}
-        style={[styles.textInput, error && styles.error]}
-      />
-      <View style={{ height: 25, marginLeft: 10 }}>
-        {error && <Text style={{ color: 'red' }}>{error}</Text>}
-      </View>
-    </>
+    <TextInput
+      {...rest}
+      ref={ref}
+      style={[styles.textInput, error && styles.error]}
+    />
   )
 });
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-
   textInput: {
     paddingRight: 5,
     paddingLeft: 10,
     paddingVertical: 10,
-    margin: 5,
-    backgroundColor: Colors.white,
+    marginVertical: 5,
+    marginHorizontal: 10,
+    backgroundColor: '#fbfefd',
     borderRadius: 5,
     borderWidth: 1,
     borderColor: 'lightgray',
+    color: '#204051',
+    fontSize: 20,
+    fontFamily: 'AppleSDGothicNeo-Bold'
   },
 
   error: {
-    borderColor: '#f1a7a7',
+    borderColor: '#d63447',
+  },
+
+  errorText: {
+    color: '#d63447',
+    fontSize: 14,
+    fontFamily: 'AppleSDGothicNeo-Regular'
   },
 });
 
