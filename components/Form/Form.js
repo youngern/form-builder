@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React, { Fragment, useState } from 'react';
 import {
   SafeAreaView,
@@ -14,164 +6,181 @@ import {
   View,
   Text,
   StatusBar,
-  TouchableOpacity,
+  Modal,
 } from 'react-native';
-import { Form, Field, FormSpy, useField } from 'react-final-form';
-// import createDecorator from 'final-form-focus';
+import _ from 'lodash';
+import { createForm } from 'final-form';
+import { Form, Field } from 'react-final-form';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-
-// import arrayMutators from 'final-form-arrays'
-// import { FieldArray } from 'react-final-form-arrays'
-
+import { Header, Icon } from 'react-native-elements';
 import Input from './Input';
+import Error from './Error';
+import AddField from './AddField';
 import FormButton from './FormButton';
 import fields from './schema.json';
 
-const onSubmit = values => { console.log('keys', Object.keys(values)); }
-// const validate = (values) => {
-//   const errors = {};
-//   inputs.forEach((fieldAttributes) => {
-//     fieldAttributes.constraints.forEach((constraint) => {
-//       if(constraint.required && !values[fieldAttributes.name]) {
-//         errors[fieldAttributes.name] = constraint.message;
-//       }
-//     })
-//   });
+const onSubmit = values => {
+  const schema = Object.keys(values).map((fieldName) => ({
+    type: 'input',
+    name: fieldName,
+    placeholder: _.startCase(fieldName),
+    initialValue: values[fieldName],
+    constraints: []
+  }));
 
-//   return errors;
-// };
-const Error = ({ name }) => {
-  const {
-    meta: { touched, error }
-  } = useField(name, { subscription: { touched: true, error: true } });
-  return (
-    <View style={{ height: 14 }}>
-      {touched && error ? (
-        <Text style={{
-          paddingLeft: 10,
-          color: '#d63447',
-          fontSize: 14,
-          fontFamily: 'AppleSDGothicNeo-Regular'
-          }}
-        >
-        {error}
-        </Text>
-      )
-      : null}
-    </View>
-  );
-};
+  console.log('submit', schema);
+}
 
-const fieldParams = {
-  "type": "input",
-  "name": "phone_number",
-  "placeholder": "Phone Number",
-  "constraints": [
-    {
-      "required": true,
-      "message": "Phone Number is Required"
-    }
-  ]
-};
+const required = (value) => value ? undefined : 'required';
+const validate = (constraints) => value => constraints.reduce((error, constraint) => error || required(value), undefined);
 
-const App: () => React$Node = () => {
+const Label = ({ name }) => (
+  <Text style={styles.label}>{_.startCase(name)}</Text>
+)
+
+const App = () => {
   const [inputs, setInputs] = useState(fields);
+  const [modalVisible, setModalVisible] = useState(false);
   const initialValues = inputs.reduce((values, curr) => ({ ...values, [curr.name]: curr.initialValue }), {})
 
-  const addField = (input) => {
+  const form = createForm({
+    onSubmit,
+    initialValues,
+    subscription: { submitting: true }
+  });
+
+  const addField = ({ name, placeholder, initialValue }) => {
     const newInputs = [
       ...inputs,
-      fieldParams,
+      {
+        type: 'input',
+        initialValue,
+        name: _.snakeCase(name),
+        placeholder,
+        constraints: []
+      },
     ]
 
     setInputs(newInputs);
+
+    if (initialValue) {
+      form.change(name, initialValue);
+    }
+
+    setModalVisible(false);
   }
 
-  // const validate = value => value ? undefined : 'required';
-
-  const validate = () => undefined;
-
   return (
-    <Form
-     initialValues={initialValues}
-     onSubmit={onSubmit}
-     subscription={{ submitting: true }}
-    >
-      {({
-        handleSubmit,
-        form,
-        // form: {
-        //   mutators: { push, pop }
-        // }, // injected from final-form-arrays above
-        values,
-        submitting,
-      }) => (
-        <View style={styles.container}>
-          <StatusBar barStyle="dark-content" />
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={styles.container}
-          >
+    <>
+      <Form form={form}>
+        {({
+          handleSubmit,
+          form,
+          // form: {
+          //   mutators: { push, pop }
+          // }, // injected from final-form-arrays above
+          values,
+          submitting,
+        }) => (
+          <View style={styles.container}>
+            <StatusBar barStyle="dark-content" />
             <SafeAreaView>
-              {inputs.map(props => {
-                const { name } = props;
+              <Field
+                subscription={{ value: true, active: true, touched: true, error: true }}
+                name="form_name"
+                placeholder="Form Name"
+                validate={required}
+              >
+                {({ input, meta, ...rest }) => {
+                  const error = (meta.touched && meta.error) || undefined;
 
-                return (
-                  <Fragment key={name}>
-                    <Field
-                      key={name}
-                      subscription={{ value: true, active: true, touched: true, error: true }}
-                      validate={validate}
-                      {...props}
-                    >
-                      {({ input, meta, ...rest }) => {
-                        const error = (meta.touched && meta.error) || undefined;
-
-                        return (
-                          <Input
-                            error={error}
-                            {...input}
-                            {...rest}
-                          />
-                        )
-                      }}
-                    </Field>
-                    <Error name={name} />
-                  </Fragment>
-                )
-              })}
-              <FormButton
-                label="Add Field"
-                onPress={addField}
-                style={styles.submit}
-                labelStyle={{ fontSize: 20 }}
-              />
+                  return (
+                    <Input
+                      style={styles.formHeader}
+                      selectionColor="#b7efcd"
+                      error={error}
+                      {...input}
+                      {...rest}
+                    />
+                  )
+                }}
+              </Field>
             </SafeAreaView>
-          </ScrollView>
-          <View style={styles.spy}>
-            <FormSpy subscription={{ values: true }}>
-              {({ values }) => (
-                <Text>{JSON.stringify(values, undefined, 2)}</Text>
-              )}
-            </FormSpy>
+            <ScrollView
+              contentInsetAdjustmentBehavior="automatic"
+              style={styles.container}
+            >
+              <SafeAreaView>
+                {inputs.map(props => {
+                  const { name, constraints } = props;
+
+                  return (
+                    <Fragment key={name}>
+                      <Label name={name} />
+                      <Field
+                        key={name}
+                        subscription={{ value: true, active: true, touched: true, error: true }}
+                        validate={validate(constraints)}
+                        {...props}
+                      >
+                        {({ input, meta, ...rest }) => {
+                          const error = (meta.touched && meta.error) || undefined;
+                          return (
+                            <Input
+                              style={meta.active ? styles.active : {}}
+                              error={error}
+                              {...input}
+                              {...rest}
+                            />
+                          )
+                        }}
+                      </Field>
+                      <Error name={name} />
+                    </Fragment>
+                  )
+                })}
+                <FormButton
+                  label="Add Field"
+                  onPress={() => { setModalVisible(true); }}
+                  style={styles.submit}
+                  labelStyle={{ fontSize: 20 }}
+                />
+              </SafeAreaView>
+            </ScrollView>
+            {/* <View style={styles.spy}>
+              <FormSpy subscription={{ values: true }}>
+                {({ values }) => (
+                  <Text>{JSON.stringify(values, undefined, 2)}</Text>
+                )}
+              </FormSpy>
+            </View> */}
+            
+            <View style={styles.footer}>
+              <FormButton
+                label="Submit"
+                onPress={handleSubmit}
+                style={styles.submit}
+              />
+              <FormButton
+                label="Reset"
+                labelStyle={{ color: 'black' }}
+                onPress={() => { form.reset(); }}
+                style={styles.reset}
+              />
+            </View>
           </View>
-          
-          <View style={styles.footer}>
-            <FormButton
-              label="Submit"
-              onPress={handleSubmit}
-              style={styles.submit}
-            />
-            <FormButton
-              label="Reset"
-              labelStyle={{ color: 'black' }}
-              onPress={() => { form.reset(); }}
-              style={styles.reset}
-            />
-          </View>
-        </View>
-      )}
-    </Form>
+        )}
+      </Form>
+      <Modal
+        animationType="slide"
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+        }}
+      >
+        <AddField onAdd={addField} />
+      </Modal>
+    </>
   );
 };
 
@@ -190,6 +199,30 @@ const styles = StyleSheet.create({
     paddingBottom: 25,
   },
 
+  formHeader: {
+    borderWidth: 0,
+    backgroundColor: baseColor,
+    fontSize: 30,
+    color: '#4d80e4',
+    padding: 0,
+    marginLeft: 0,
+  },
+
+  fieldHeader: {
+    borderWidth: 0,
+    fontSize: 30,
+    color: '#4d80e4',
+    padding: 0,
+    marginLeft: 10,
+    marginBottom: 10,
+  },
+
+  label: {
+    marginLeft: 10,
+    fontSize: 18,
+    color: '#4d80e4',
+  },
+
   spy: {
     backgroundColor: Colors.white,
     padding: 10,
@@ -206,7 +239,11 @@ const styles = StyleSheet.create({
 
   reset: {
     backgroundColor: '#fbfefd',
-    borderColor: '#46b3e6'
+    borderColor: '#46b3e6',
+  },
+  
+  active: {
+    borderColor: '#46b3e6',
   },
 });
 

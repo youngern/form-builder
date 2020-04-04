@@ -4,34 +4,19 @@
     "name": "firstName",
     "placeholder": "First Name",
     "initialValue": "John",
-    "constraints": [
-      {
-        "required": true,
-        "message": "First Name is Required"
-      }
-    ]
+    "constraints": []
   },
   {
     "type": "input",
     "name": "lastName",
     "placeholder": "Last Name",
-    "constraints": [
-      {
-        "required": true,
-        "message": "Last Name is Required"
-      }
-    ]
+    "constraints": []
   },  
   {
     "type": "input",
     "name": "email",
     "placeholder": "Email Address",
-    "constraints": [
-      {
-        "required": true,
-        "message": "Email is Required"
-      }
-    ]
+    "constraints": []
   },
   {
     "type": "input",
@@ -48,78 +33,43 @@
     "type": "input",
     "name": "gender",
     "placeholder": "Gender",
-    "constraints": [
-      {
-        "required": true,
-        "message": "Gender is Required"
-      }
-    ]
+    "constraints": []
   }, 
   {
     "type": "input",
     "name": "age",
     "placeholder": "Age",
-    "constraints": [
-      {
-        "required": true,
-        "message": "Age is Required"
-      }
-    ]
+    "constraints": []
   },  
   {
     "type": "input",
     "name": "height",
     "placeholder": "Height",
-    "constraints": [
-      {
-        "required": true,
-        "message": "Height is Required"
-      }
-    ]
+    "constraints": []
   },
   {
     "type": "input",
     "name": "weight",
     "placeholder": "Weight",
-    "constraints": [
-      {
-        "required": true,
-        "message": "Weight is Required"
-      }
-    ]
+    "constraints": []
   },
   {
     "type": "input",
     "name": "shoe_size",
     "placeholder": "Shoe Size",
-    "constraints": [
-      {
-        "required": true,
-        "message": "Shoe Size is Required"
-      }
-    ]
+    "constraints": []
   },  
   {
     "type": "input",
     "name": "pant_size",
     "placeholder": "Pant Size",
-    "constraints": [
-      {
-        "required": true,
-        "message": "Pant Size is Required"
-      }
-    ]
+    "constraints": []
   },  
   {
     "type": "input",
     "name": "shirt_size",
     "placeholder": "Shirt Size",
-    "constraints": [
-      {
-        "required": true,
-        "message": "Shirt Size is Required"
-      }
-    ]
+    "constraints": []
   },
   {
     "type": "input",

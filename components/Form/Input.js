@@ -9,19 +9,17 @@
 import React from 'react';
 import {
   StyleSheet,
-  View,
-  Text,
   TextInput,
 } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const Input = React.forwardRef((props, ref) => {
-  const { checked, name, error, ...rest } = props;
+  const { checked, name, error, style, onFocus, ...rest } = props;
+
   return (
     <TextInput
       {...rest}
       ref={ref}
-      style={[styles.textInput, error && styles.error]}
+      style={[styles.textInput, style, error && styles.error]}
     />
   )
 });
