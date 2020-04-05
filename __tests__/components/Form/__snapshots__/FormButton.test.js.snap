@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fbfefd",
+      "borderColor": "#679b9b",
+      "borderRadius": 5,
+      "borderWidth": 2,
+      "flex": 1,
+      "margin": 10,
+      "opacity": 1,
+      "padding": 10,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFF",
+          "fontWeight": "bold",
+        },
+        Object {
+          "color": "#679b9b",
+          "fontSize": 20,
+        },
+      ]
+    }
+  >
+    Add Field
+  </Text>
+</View>
+`;
+
+exports[`renders correctly without any styling 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#FFF",
+      "borderColor": "lightgray",
+      "borderRadius": 5,
+      "borderWidth": 1,
+      "flex": 1,
+      "margin": 10,
+      "opacity": 1,
+      "padding": 10,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFF",
+          "fontWeight": "bold",
+        },
+        Object {},
+      ]
+    }
+  >
+    Add Field
+  </Text>
+</View>
+`;

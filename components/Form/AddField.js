@@ -16,17 +16,19 @@ import Label from './Label';
 import FormButton from './FormButton';
 
 const { Colors } = Config;
-const SwitchInput = (props) => {
+const SwitchInput = React.forwardRef((props, ref) => {
   const { onChange, ...rest } = props;
   return (
-    <View style={{
-      paddingRight: 5,
-      paddingVertical: 10,
-      marginVertical: 5,
-      marginHorizontal: 10,
-      alignItems: 'flex-start'
-    }}>
+    <View
+      style={{
+        paddingRight: 5,
+        paddingVertical: 10,
+        marginVertical: 5,
+        alignItems: 'flex-start'
+      }}
+    >
       <Switch
+        ref={ref}
         trackColor={{ false: "#edffea", true: "#75daad" }}
         thumbColor="#fff"
         ios_backgroundColor="#ed6663"
@@ -35,7 +37,7 @@ const SwitchInput = (props) => {
       />
     </View>
   )
-}
+});
 
 const required = (value) => value ? undefined : 'required';
 const App = (props) => {

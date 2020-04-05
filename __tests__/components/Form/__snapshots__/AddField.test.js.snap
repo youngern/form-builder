@@ -1,0 +1,687 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with initial values 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View>
+    <Text
+      style={
+        Object {
+          "borderWidth": 0,
+          "color": "#4d80e4",
+          "fontSize": 30,
+          "marginBottom": 10,
+          "marginLeft": 10,
+          "padding": 0,
+        }
+      }
+    >
+      Add Field
+    </Text>
+    <View
+      style={
+        Object {
+          "marginHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#4d80e4",
+            "fontFamily": "AppleSDGothicNeo-Bold",
+            "fontSize": 14,
+          }
+        }
+      >
+        NAME
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Name"
+        rejectResponderTermination={true}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#fbfefd",
+              "borderColor": "lightgray",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "color": "#204051",
+              "fontFamily": "AppleSDGothicNeo-Bold",
+              "fontSize": 20,
+              "paddingLeft": 10,
+              "paddingRight": 5,
+              "paddingVertical": 10,
+            },
+            undefined,
+            undefined,
+          ]
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <View
+        style={
+          Object {
+            "height": 14,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "marginHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#4d80e4",
+            "fontFamily": "AppleSDGothicNeo-Bold",
+            "fontSize": 14,
+          }
+        }
+      >
+        DESCRIPTION
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Description"
+        rejectResponderTermination={true}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#fbfefd",
+              "borderColor": "lightgray",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "color": "#204051",
+              "fontFamily": "AppleSDGothicNeo-Bold",
+              "fontSize": 20,
+              "paddingLeft": 10,
+              "paddingRight": 5,
+              "paddingVertical": 10,
+            },
+            undefined,
+            undefined,
+          ]
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "height": 14,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "marginHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#4d80e4",
+            "fontFamily": "AppleSDGothicNeo-Bold",
+            "fontSize": 14,
+          }
+        }
+      >
+        PLACEHOLDER
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Placeholder"
+        rejectResponderTermination={true}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#fbfefd",
+              "borderColor": "lightgray",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "color": "#204051",
+              "fontFamily": "AppleSDGothicNeo-Bold",
+              "fontSize": 20,
+              "paddingLeft": 10,
+              "paddingRight": 5,
+              "paddingVertical": 10,
+            },
+            undefined,
+            undefined,
+          ]
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <View
+        style={
+          Object {
+            "height": 14,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "marginHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#4d80e4",
+            "fontFamily": "AppleSDGothicNeo-Bold",
+            "fontSize": 14,
+          }
+        }
+      >
+        INITIAL VALUE
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Initial Value"
+        rejectResponderTermination={true}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#fbfefd",
+              "borderColor": "lightgray",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "color": "#204051",
+              "fontFamily": "AppleSDGothicNeo-Bold",
+              "fontSize": 20,
+              "paddingLeft": 10,
+              "paddingRight": 5,
+              "paddingVertical": 10,
+            },
+            undefined,
+            undefined,
+          ]
+        }
+        underlineColorAndroid="transparent"
+        value="nada"
+      />
+      <View
+        style={
+          Object {
+            "height": 14,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "marginHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#4d80e4",
+            "fontFamily": "AppleSDGothicNeo-Bold",
+            "fontSize": 14,
+          }
+        }
+      >
+        REQUIRED
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "marginVertical": 5,
+            "paddingRight": 5,
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <RCTSwitch
+          accessibilityRole="switch"
+          name="required"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#75daad"
+          placeholder="Required"
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              Object {
+                "backgroundColor": "#ed6663",
+                "borderRadius": 16,
+              },
+            ]
+          }
+          thumbTintColor="#fff"
+          tintColor="#edffea"
+          value={false}
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "height": 14,
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#4d80e4",
+        "borderColor": "#4d80e4",
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "flex": 0,
+        "margin": 10,
+        "opacity": 1,
+        "padding": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#FFF",
+            "fontWeight": "bold",
+          },
+          Object {
+            "fontSize": 20,
+          },
+        ]
+      }
+    >
+      Add Field
+    </Text>
+  </View>
+</RCTSafeAreaView>
+`;
+
+exports[`renders correctly without initial values 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View>
+    <Text
+      style={
+        Object {
+          "borderWidth": 0,
+          "color": "#4d80e4",
+          "fontSize": 30,
+          "marginBottom": 10,
+          "marginLeft": 10,
+          "padding": 0,
+        }
+      }
+    >
+      Add Field
+    </Text>
+    <View
+      style={
+        Object {
+          "marginHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#4d80e4",
+            "fontFamily": "AppleSDGothicNeo-Bold",
+            "fontSize": 14,
+          }
+        }
+      >
+        NAME
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Name"
+        rejectResponderTermination={true}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#fbfefd",
+              "borderColor": "lightgray",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "color": "#204051",
+              "fontFamily": "AppleSDGothicNeo-Bold",
+              "fontSize": 20,
+              "paddingLeft": 10,
+              "paddingRight": 5,
+              "paddingVertical": 10,
+            },
+            undefined,
+            undefined,
+          ]
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <View
+        style={
+          Object {
+            "height": 14,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "marginHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#4d80e4",
+            "fontFamily": "AppleSDGothicNeo-Bold",
+            "fontSize": 14,
+          }
+        }
+      >
+        DESCRIPTION
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Description"
+        rejectResponderTermination={true}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#fbfefd",
+              "borderColor": "lightgray",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "color": "#204051",
+              "fontFamily": "AppleSDGothicNeo-Bold",
+              "fontSize": 20,
+              "paddingLeft": 10,
+              "paddingRight": 5,
+              "paddingVertical": 10,
+            },
+            undefined,
+            undefined,
+          ]
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "height": 14,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "marginHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#4d80e4",
+            "fontFamily": "AppleSDGothicNeo-Bold",
+            "fontSize": 14,
+          }
+        }
+      >
+        PLACEHOLDER
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Placeholder"
+        rejectResponderTermination={true}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#fbfefd",
+              "borderColor": "lightgray",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "color": "#204051",
+              "fontFamily": "AppleSDGothicNeo-Bold",
+              "fontSize": 20,
+              "paddingLeft": 10,
+              "paddingRight": 5,
+              "paddingVertical": 10,
+            },
+            undefined,
+            undefined,
+          ]
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <View
+        style={
+          Object {
+            "height": 14,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "marginHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#4d80e4",
+            "fontFamily": "AppleSDGothicNeo-Bold",
+            "fontSize": 14,
+          }
+        }
+      >
+        INITIAL VALUE
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Initial Value"
+        rejectResponderTermination={true}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#fbfefd",
+              "borderColor": "lightgray",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "color": "#204051",
+              "fontFamily": "AppleSDGothicNeo-Bold",
+              "fontSize": 20,
+              "paddingLeft": 10,
+              "paddingRight": 5,
+              "paddingVertical": 10,
+            },
+            undefined,
+            undefined,
+          ]
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <View
+        style={
+          Object {
+            "height": 14,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "marginHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#4d80e4",
+            "fontFamily": "AppleSDGothicNeo-Bold",
+            "fontSize": 14,
+          }
+        }
+      >
+        REQUIRED
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "marginVertical": 5,
+            "paddingRight": 5,
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <RCTSwitch
+          accessibilityRole="switch"
+          name="required"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#75daad"
+          placeholder="Required"
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              Object {
+                "backgroundColor": "#ed6663",
+                "borderRadius": 16,
+              },
+            ]
+          }
+          thumbTintColor="#fff"
+          tintColor="#edffea"
+          value={false}
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "height": 14,
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#4d80e4",
+        "borderColor": "#4d80e4",
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "flex": 0,
+        "margin": 10,
+        "opacity": 1,
+        "padding": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#FFF",
+            "fontWeight": "bold",
+          },
+          Object {
+            "fontSize": 20,
+          },
+        ]
+      }
+    >
+      Add Field
+    </Text>
+  </View>
+</RCTSafeAreaView>
+`;

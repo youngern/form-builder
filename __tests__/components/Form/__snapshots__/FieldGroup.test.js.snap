@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <Text
+    style={
+      Object {
+        "color": "#4d80e4",
+        "fontFamily": "AppleSDGothicNeo-Bold",
+        "fontSize": 14,
+      }
+    }
+  >
+    
+  </Text>,
+  <Text
+    style={
+      Object {
+        "color": "#679b9b",
+        "fontFamily": undefined,
+        "fontSize": 12,
+      }
+    }
+  >
+    
+  </Text>,
+  <TextInput
+    allowFontScaling={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="placeholder"
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fbfefd",
+          "borderColor": "lightgray",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "color": "#204051",
+          "fontFamily": "AppleSDGothicNeo-Bold",
+          "fontSize": 20,
+          "paddingLeft": 10,
+          "paddingRight": 5,
+          "paddingVertical": 10,
+        },
+        undefined,
+        undefined,
+      ]
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />,
+]
+`;

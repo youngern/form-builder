@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Text
+  style={
+    Object {
+      "color": "#679b9b",
+      "fontFamily": undefined,
+      "fontSize": 12,
+    }
+  }
+>
+  test link
+</Text>
+`;
