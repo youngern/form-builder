@@ -4,20 +4,18 @@ import {
   StyleSheet,
   ScrollView,
   View,
-  Text,
   StatusBar,
   TouchableOpacity,
 } from 'react-native';
 import _ from 'lodash';
 import { Form, Field, FormSpy } from 'react-final-form';
-import arrayMutators from 'final-form-arrays'
-import { FieldArray } from 'react-final-form-arrays'
+import { FieldArray } from 'react-final-form-arrays';
+import arrayMutators from 'final-form-arrays';
 
 import Config from 'FinalFormReactNative/services/config';
 import Input from './Input';
-import Description from './Description';
-import Label from './Label';
 import AddField from './AddField';
+import FieldGroup from './FieldGroup';
 import FormButton from './FormButton';
 import Modal from '../Modal';
 
@@ -28,6 +26,7 @@ const Buildable = (props) => {
   const { fields = [], onSubmit } = props;
   const [inputs, setInputs] = useState(fields);
   const [fieldValues, setFieldValues] = useState(undefined);
+
   useEffect(() => { setInputs(fields); }, [fields])
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -66,59 +65,51 @@ const Buildable = (props) => {
                   )
                 }}
               </Field>
+              <Field
+                subscription={{ value: true, active: true, touched: true, error: true }}
+                name="form_description"
+                placeholder="Enter a description for your form..."
+                initialValue={inputs.form_description}
+              >
+                {({ input, meta, ...rest }) => {
+                  const error = (meta.touched && meta.error) || undefined;
+
+                  return (
+                    <Input
+                      style={styles.formDescription}
+                      selectionColor="#b7efcd"
+                      error={error}
+                      {...input}
+                      {...rest}
+                    />
+                  )
+                }}
+              </Field>
             </SafeAreaView>
             <ScrollView
               contentInsetAdjustmentBehavior="automatic"
               style={[styles.container, { paddingTop: 10 }]}
             >
               <SafeAreaView>
-                <FieldArray name="fields" initialValue={inputs.fields}>
+                <FieldArray
+                  name="fields"
+                  initialValue={inputs.fields}
+                >
                   {({ fields }) =>
                     fields.map((name, index) => (
                       <TouchableOpacity
+                        key={name}
                         onPress={() => {
                           const currentFieldValues = _.get(inputs, name);
                           setFieldValues({ ...currentFieldValues, fieldIndex: index });
                           setModalVisible(true);
                         }}
                         style={styles.section}
-                        key={name}
                       >
-                        <Field name={`${name}.name`}>
-                          {({ input }) => <Label {...input} />}
-                        </Field>
-                        <Field name={`${name}.description`}>
-                          {({ input }) => <Description {...input} />}
-                        </Field>
-                        <Field name={`${name}.initialValue`} placeholder={_.get(values, `${name}.placeholder`)}>
-                          {({ input, meta, ...rest }) => {
-                            return (
-                              <Input
-                                {...input}
-                                {...rest}
-                              />
-                            )
-                          }}
-                        </Field>
-                        {/* <Field
-                          key={`${name}.${fieldName}`}
-                          subscription={{ value: true, active: true, touched: true, error: true }}
-                          name={`${name}.${fieldName}`}
-                        >
-                          {({ input, meta, ...rest }) => {
-                            const error = (meta.touched && meta.error) || undefined;
-                            return (
-                              <Input
-                                style={meta.active ? styles.active : {}}
-                                error={error}
-                                {...input}
-                                {...rest}
-                                name={`${name}.${fieldName}`}
-                              />
-                            )
-                          }}
-                        </Field> */}
-                        {/* <Error name={name} /> */}
+                        <FieldGroup
+                          name={name}
+                          placeholder={_.get(values, `${name}.placeholder`)}
+                        />
                       </TouchableOpacity>
                     ))
                   }
@@ -203,6 +194,16 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: '#4d80e4',
     padding: 0,
+    marginLeft: 0,
+  },
+
+  formDescription: {
+    borderWidth: 0,
+    backgroundColor: Colors.background,
+    fontSize: 14,
+    color: '#4d80e4',
+    padding: 0,
+    paddingTop: 0,
     marginLeft: 0,
   },
 
