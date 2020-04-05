@@ -18,7 +18,6 @@ import FormButton from './FormButton';
 const { Colors } = Config;
 const SwitchInput = (props) => {
   const { onChange, ...rest } = props;
-
   return (
     <View style={{
       paddingRight: 5,
@@ -40,121 +39,121 @@ const SwitchInput = (props) => {
 
 const required = (value) => value ? undefined : 'required';
 const App = (props) => {
-  const { onAdd } = props;
+  const { onAdd, values = undefined } = props;
 
   return (
-    <Form onSubmit={onAdd}>
+    <Form onSubmit={onAdd} initialValues={values}>
       {({ handleSubmit }) => (
         <SafeAreaView style={{ flex: 1 }}>
           <View>
             <Text style={styles.fieldHeader}>Add Field</Text>
             <View style={styles.section}>
-              <Label name="name" />
-            </View>
-            <Field
-              subscription={{ value: true, active: true, touched: true, error: true }}
-              name="name"
-              placeholder="Name"
-              validate={required}
-            >
-              {({ input, meta, ...rest }) => {
-                const error = (meta.touched && meta.error) || undefined;
+              <Label value="name" />
+              <Field
+                subscription={{ value: true, active: true, touched: true, error: true }}
+                name="name"
+                placeholder="Name"
+                validate={required}
+              >
+                {({ input, meta, ...rest }) => {
+                  const error = (meta.touched && meta.error) || undefined;
 
-                return (
-                  <Input
-                    error={error}
-                    {...input}
-                    {...rest}
-                  />
-                )
-              }}
-            </Field>
+                  return (
+                    <Input
+                      error={error}
+                      {...input}
+                      {...rest}
+                    />
+                  )
+                }}
+              </Field>
+              <Error name="name" />
+            </View>
+            <View style={styles.section}>
+              <Label value="description" />
+              <Field
+                subscription={{ value: true, active: true, touched: true, error: true }}
+                name="description"
+                placeholder="Description"
+              >
+                {({ input, meta, ...rest }) => {
+                  const error = (meta.touched && meta.error) || undefined;
+
+                  return (
+                    <Input
+                      error={error}
+                      {...input}
+                      {...rest}
+                    />
+                  )
+                }}
+              </Field>
+            </View>
             <Error name="name" />
             <View style={styles.section}>
-              <Label name="description" />
-            </View>
-            <Field
-              subscription={{ value: true, active: true, touched: true, error: true }}
-              name="description"
-              placeholder="Description"
-            >
-              {({ input, meta, ...rest }) => {
-                const error = (meta.touched && meta.error) || undefined;
+              <Label value="placeholder" />
+              <Field
+                subscription={{ value: true, active: true, touched: true, error: true }}
+                name="placeholder"
+                placeholder="Placeholder"
+              >
+                {({ input, meta, ...rest }) => {
+                  const error = (meta.touched && meta.error) || undefined;
 
-                return (
-                  <Input
-                    error={error}
-                    {...input}
-                    {...rest}
-                  />
-                )
-              }}
-            </Field>
-            <Error name="name" />
+                  return (
+                    <Input
+                      error={error}
+                      {...input}
+                      {...rest}
+                    />
+                  )
+                }}
+              </Field>
+              <Error name="name" />
+            </View>
             <View style={styles.section}>
-              <Label name="placeholder" />
-            </View>
-            <Field
-              subscription={{ value: true, active: true, touched: true, error: true }}
-              name="placeholder"
-              placeholder="Placeholder"
-            >
-              {({ input, meta, ...rest }) => {
-                const error = (meta.touched && meta.error) || undefined;
+              <Label value="initialValue" />
+              <Field
+                subscription={{ value: true, active: true, touched: true, error: true }}
+                name="initialValue"
+                placeholder="Initial Value"
+              >
+                {({ input, meta, ...rest }) => {
+                  const error = (meta.touched && meta.error) || undefined;
 
-                return (
-                  <Input
-                    error={error}
-                    {...input}
-                    {...rest}
-                  />
-                )
-              }}
-            </Field>
-            <Error name="name" />
+                  return (
+                    <Input
+                      error={error}
+                      {...input}
+                      {...rest}
+                    />
+                  )
+                }}
+              </Field>
+              <Error name="initialValue" />
+            </View>
             <View style={styles.section}>
-              <Label name="initialValue" />
-            </View>
-            <Field
-              subscription={{ value: true, active: true, touched: true, error: true }}
-              name="initialValue"
-              placeholder="Initial Value"
-            >
-              {({ input, meta, ...rest }) => {
-                const error = (meta.touched && meta.error) || undefined;
+              <Label value="required" />
+              <Field
+                subscription={{ value: true, active: true, touched: true, error: true }}
+                name="required"
+                placeholder="Required"
+                initialValue={false}
+              >
+                {({ input, meta, ...rest }) => {
+                  const error = (meta.touched && meta.error) || undefined;
 
-                return (
-                  <Input
-                    error={error}
-                    {...input}
-                    {...rest}
-                  />
-                )
-              }}
-            </Field>
-            <Error name="initialValue" />
-            <View style={styles.section}>
-              <Label name="required" />
+                  return (
+                    <SwitchInput
+                      error={error}
+                      {...input}
+                      {...rest}
+                    />
+                  )
+                }}
+              </Field>
+              <Error name="required" />
             </View>
-            <Field
-              subscription={{ value: true, active: true, touched: true, error: true }}
-              name="constraints[0].required"
-              placeholder="Required"
-              initialValue={false}
-            >
-              {({ input, meta, ...rest }) => {
-                const error = (meta.touched && meta.error) || undefined;
-
-                return (
-                  <SwitchInput
-                    error={error}
-                    {...input}
-                    {...rest}
-                  />
-                )
-              }}
-            </Field>
-            <Error name="constraints[0].required" />
           </View>
           <FormButton
             label="Add Field"
@@ -223,7 +222,7 @@ const styles = StyleSheet.create({
   },
 
   section: {
-    marginLeft: 10,
+    marginHorizontal: 10,
   }
 });
 

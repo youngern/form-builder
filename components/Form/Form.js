@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -6,69 +6,42 @@ import {
   View,
   Text,
   StatusBar,
+  TouchableOpacity,
 } from 'react-native';
 import _ from 'lodash';
-import { Form, Field } from 'react-final-form';
+import { Form, Field, FormSpy } from 'react-final-form';
+import arrayMutators from 'final-form-arrays'
+import { FieldArray } from 'react-final-form-arrays'
+
 import Config from 'FinalFormReactNative/services/config';
 import Input from './Input';
-import Error from './Error';
+import Description from './Description';
 import Label from './Label';
 import AddField from './AddField';
 import FormButton from './FormButton';
 import Modal from '../Modal';
 
-const descriptionPlaceholder = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
-`
-
-const { Fonts, Colors } = Config;
+const { Colors } = Config;
 const required = (value) => value ? undefined : 'required';
-const validate = (constraints) => value => constraints.reduce((error, constraint) => error || required(value), undefined);
-const Description = ({ text }) => {
-  return (
-    <Text style={styles.description}>
-      {text.trim()}
-    </Text>
-  )
-}
 
 const Buildable = (props) => {
   const { fields = [], onSubmit } = props;
   const [inputs, setInputs] = useState(fields);
+  const [fieldValues, setFieldValues] = useState(undefined);
   useEffect(() => { setInputs(fields); }, [fields])
-
-  const submit = async values => {
-    const schema = Object.keys(values).map((fieldName) => ({
-      type: 'input',
-      name: fieldName,
-      placeholder: _.startCase(fieldName),
-      initialValue: values[fieldName],
-      constraints: []
-    }));
-  
-    onSubmit(schema);
-  }
-
   const [modalVisible, setModalVisible] = useState(false);
-
-  const addField = ({ name, ...rest }) => {
-    const newInputs = [
-      ...inputs,
-      {
-        type: 'input',
-        name: _.snakeCase(name),
-        ...rest,
-      },
-    ];
-    setInputs(newInputs);
-  }
 
   return (
     <>
       <Form
-        onSubmit={submit}
-        subscription={{ submitting: true }}
+        onSubmit={onSubmit}
+        subscription={{ submitting: true, values: true }}
+        mutators={{
+          ...arrayMutators
+        }}
       >
-        {({ handleSubmit }) => (
+        {({ handleSubmit, form, values }) => (
+          <>
           <View style={styles.container}>
             <StatusBar barStyle="dark-content" />
             <SafeAreaView>
@@ -77,7 +50,7 @@ const Buildable = (props) => {
                 name="form_name"
                 placeholder="Form Name"
                 validate={required}
-                initialValue={_.get(_.find(inputs, ['name', 'form_name']), 'initialValue')}
+                initialValue={inputs.form_name}
               >
                 {({ input, meta, ...rest }) => {
                   const error = (meta.touched && meta.error) || undefined;
@@ -99,37 +72,57 @@ const Buildable = (props) => {
               style={[styles.container, { paddingTop: 10 }]}
             >
               <SafeAreaView>
-                {_.reject(inputs, ({ name }) => name === 'form_name').map(props => {
-                  const { name, constraints } = props;
-
-                  return (
-                    <Fragment key={name}>
-                      <View style={styles.section}>
-                        <Label name={name} />
-                        <Description text={descriptionPlaceholder} />
-                      </View>
-                      <Field
-                        key={name}
-                        subscription={{ value: true, active: true, touched: true, error: true }}
-                        validate={validate(constraints)}
-                        {...props}
-                      >
-                        {({ input, meta, ...rest }) => {
-                          const error = (meta.touched && meta.error) || undefined;
-                          return (
-                            <Input
-                              style={meta.active ? styles.active : {}}
-                              error={error}
-                              {...input}
-                              {...rest}
-                            />
-                          )
+                <FieldArray name="fields" initialValue={inputs.fields}>
+                  {({ fields }) =>
+                    fields.map((name, index) => (
+                      <TouchableOpacity
+                        onPress={() => {
+                          const currentFieldValues = _.get(inputs, name);
+                          setFieldValues({ ...currentFieldValues, fieldIndex: index });
+                          setModalVisible(true);
                         }}
-                      </Field>
-                      <Error name={name} />
-                    </Fragment>
-                  )
-                })}
+                        style={styles.section}
+                        key={name}
+                      >
+                        <Field name={`${name}.name`}>
+                          {({ input }) => <Label {...input} />}
+                        </Field>
+                        <Field name={`${name}.description`}>
+                          {({ input }) => <Description {...input} />}
+                        </Field>
+                        <Field name={`${name}.initialValue`} placeholder={_.get(values, `${name}.placeholder`)}>
+                          {({ input, meta, ...rest }) => {
+                            return (
+                              <Input
+                                {...input}
+                                {...rest}
+                              />
+                            )
+                          }}
+                        </Field>
+                        {/* <Field
+                          key={`${name}.${fieldName}`}
+                          subscription={{ value: true, active: true, touched: true, error: true }}
+                          name={`${name}.${fieldName}`}
+                        >
+                          {({ input, meta, ...rest }) => {
+                            const error = (meta.touched && meta.error) || undefined;
+                            return (
+                              <Input
+                                style={meta.active ? styles.active : {}}
+                                error={error}
+                                {...input}
+                                {...rest}
+                                name={`${name}.${fieldName}`}
+                              />
+                            )
+                          }}
+                        </Field> */}
+                        {/* <Error name={name} /> */}
+                      </TouchableOpacity>
+                    ))
+                  }
+                </FieldArray>
                 <FormButton
                   label="Add Field"
                   onPress={() => { setModalVisible(true); }}
@@ -138,6 +131,16 @@ const Buildable = (props) => {
                 />
               </SafeAreaView>
             </ScrollView>
+            {/* <FormSpy subscription={{ values: true }}>
+              {({ values }) => {
+                console.log('values', values);
+                return (
+                  <Text>
+                    {JSON.stringify(values, 0, 2)}
+                  </Text> 
+                );
+              }}
+            </FormSpy> */}
             <View style={styles.footer}>
               <FormButton
                 label="Save"
@@ -146,20 +149,37 @@ const Buildable = (props) => {
               />
             </View>
           </View>
+          <Modal
+            animationType="slide"
+            visible={modalVisible}
+            onRequestClose={() => { setModalVisible(false); }}
+          >
+            <AddField
+              values={fieldValues}
+              onAdd={values => {
+                const { name, fieldIndex, ...rest } = values;
+                const isPersisted = !!fieldValues;
+                const fieldParams = {
+                  type: 'input',
+                  label: name,
+                  name: _.snakeCase(name),
+                  ...rest,
+                };
+
+                if (isPersisted) {
+                  form.mutators.update('fields', fieldIndex, fieldParams);
+                } else {
+                  form.mutators.push('fields', fieldParams);
+                }
+
+                setModalVisible(false);
+                setFieldValues(undefined);
+              }}
+            />
+          </Modal>
+          </>
         )}
       </Form>
-      <Modal
-        animationType="slide"
-        visible={modalVisible}
-        onRequestClose={() => { setModalVisible(false); }}
-      >
-        <AddField
-          onAdd={values => {
-            addField(values);
-            setModalVisible(false);
-          }}
-        />
-      </Modal>
     </>
   );
 };
@@ -207,14 +227,9 @@ const styles = StyleSheet.create({
   },
 
   section: {
-    marginLeft: 10,
+    marginVertical: 5,
+    marginHorizontal: 10,
   },
-
-  description: {
-    fontFamily: Fonts.regular,
-    color: '#679b9b',
-    fontSize: 12
-  }
 });
 
 export default Buildable;

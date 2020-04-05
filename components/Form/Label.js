@@ -7,8 +7,8 @@ import _ from 'lodash';
 import Config from 'FinalFormReactNative/services/config';
 const { Fonts } = Config;
 
-const Label = ({ name }) => (
-  <Text style={styles.label}>{_.upperCase(name)}</Text>
+const Label = ({ value }) => (
+  <Text style={styles.label}>{_.upperCase(value)}</Text>
 );
 
 const styles = StyleSheet.create({

@@ -17,14 +17,14 @@ class App extends Component {
     this.setState({ loading: true });
     const fields = await api.get();
 
-    console.log('fields', fields);
+    console.log('get fields', fields);
     this.setState({ loading: false, fields });
   }
 
   setValues = async (values) => {
     this.setState({ loading: true, fields: values });
     await api.set(values);
-    console.log('values', values);
+    console.log('set values', values);
     this.setState({ loading: false });
   }
 
