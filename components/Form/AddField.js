@@ -4,13 +4,39 @@ import {
   StyleSheet,
   View,
   Text,
+  Switch,
 } from 'react-native';
 import _ from 'lodash';
 import { Form, Field } from 'react-final-form';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+
+import Config from 'FinalFormReactNative/services/config';
 import Input from './Input';
 import Error from './Error';
+import Label from './Label';
 import FormButton from './FormButton';
+
+const { Colors } = Config;
+const SwitchInput = (props) => {
+  const { onChange, ...rest } = props;
+
+  return (
+    <View style={{
+      paddingRight: 5,
+      paddingVertical: 10,
+      marginVertical: 5,
+      marginHorizontal: 10,
+      alignItems: 'flex-start'
+    }}>
+      <Switch
+        trackColor={{ false: "#edffea", true: "#75daad" }}
+        thumbColor="#fff"
+        ios_backgroundColor="#ed6663"
+        onValueChange={onChange}
+        {...rest}
+      />
+    </View>
+  )
+}
 
 const required = (value) => value ? undefined : 'required';
 const App = (props) => {
@@ -22,6 +48,9 @@ const App = (props) => {
         <SafeAreaView style={{ flex: 1 }}>
           <View>
             <Text style={styles.fieldHeader}>Add Field</Text>
+            <View style={styles.section}>
+              <Label name="name" />
+            </View>
             <Field
               subscription={{ value: true, active: true, touched: true, error: true }}
               name="name"
@@ -41,6 +70,30 @@ const App = (props) => {
               }}
             </Field>
             <Error name="name" />
+            <View style={styles.section}>
+              <Label name="description" />
+            </View>
+            <Field
+              subscription={{ value: true, active: true, touched: true, error: true }}
+              name="description"
+              placeholder="Description"
+            >
+              {({ input, meta, ...rest }) => {
+                const error = (meta.touched && meta.error) || undefined;
+
+                return (
+                  <Input
+                    error={error}
+                    {...input}
+                    {...rest}
+                  />
+                )
+              }}
+            </Field>
+            <Error name="name" />
+            <View style={styles.section}>
+              <Label name="placeholder" />
+            </View>
             <Field
               subscription={{ value: true, active: true, touched: true, error: true }}
               name="placeholder"
@@ -59,6 +112,9 @@ const App = (props) => {
               }}
             </Field>
             <Error name="name" />
+            <View style={styles.section}>
+              <Label name="initialValue" />
+            </View>
             <Field
               subscription={{ value: true, active: true, touched: true, error: true }}
               name="initialValue"
@@ -77,6 +133,28 @@ const App = (props) => {
               }}
             </Field>
             <Error name="initialValue" />
+            <View style={styles.section}>
+              <Label name="required" />
+            </View>
+            <Field
+              subscription={{ value: true, active: true, touched: true, error: true }}
+              name="constraints[0].required"
+              placeholder="Required"
+              initialValue={false}
+            >
+              {({ input, meta, ...rest }) => {
+                const error = (meta.touched && meta.error) || undefined;
+
+                return (
+                  <SwitchInput
+                    error={error}
+                    {...input}
+                    {...rest}
+                  />
+                )
+              }}
+            </Field>
+            <Error name="constraints[0].required" />
           </View>
           <FormButton
             label="Add Field"
@@ -90,16 +168,14 @@ const App = (props) => {
   );
 };
 
-const baseColor = '#f3fcf9';
-
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: baseColor,
+    backgroundColor: Colors.background,
     flex: 1,
   },
 
   footer: {
-    backgroundColor: baseColor,
+    backgroundColor: Colors.background,
     flexDirection: 'row',
     justifyContent: 'space-around',
     paddingBottom: 25,
@@ -107,7 +183,7 @@ const styles = StyleSheet.create({
 
   formHeader: {
     borderWidth: 0,
-    backgroundColor: baseColor,
+    backgroundColor: Colors.background,
     fontSize: 30,
     color: '#4d80e4',
     padding: 0,
@@ -145,6 +221,10 @@ const styles = StyleSheet.create({
   active: {
     borderColor: '#46b3e6',
   },
+
+  section: {
+    marginLeft: 10,
+  }
 });
 
 export default App;

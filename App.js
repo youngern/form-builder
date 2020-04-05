@@ -18,15 +18,24 @@ class App extends Component {
     const fields = await api.get();
 
     console.log('fields', fields);
+    this.setState({ loading: false, fields });
+  }
 
-    this.setState({ loading: false, fields: fields || [] });
+  setValues = async (values) => {
+    this.setState({ loading: true, fields: values });
+    await api.set(values);
+    console.log('values', values);
+    this.setState({ loading: false });
   }
 
   render() {
     const { fields = [] } = this.state;
 
     return (
-      <Form fields={fields}/>
+      <Form
+        fields={fields}
+        onSubmit={this.setValues}
+      />
     );
   }
 }

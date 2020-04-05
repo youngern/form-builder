@@ -24,7 +24,7 @@
     "placeholder": "Phone Number",
     "constraints": [
       {
-        "required": true,
+        "name": "required",
         "message": "Phone Number is Required"
       }
     ]

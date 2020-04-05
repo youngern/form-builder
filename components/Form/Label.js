@@ -1,0 +1,22 @@
+import React from 'react';
+import {
+  Text,
+  StyleSheet,
+} from 'react-native';
+import _ from 'lodash';
+import Config from 'FinalFormReactNative/services/config';
+const { Fonts } = Config;
+
+const Label = ({ name }) => (
+  <Text style={styles.label}>{_.upperCase(name)}</Text>
+);
+
+const styles = StyleSheet.create({
+  label: {
+    fontSize: 14,
+    color: '#4d80e4',
+    fontFamily: Fonts.Bold,
+  },
+});
+
+export default Label;

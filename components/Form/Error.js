@@ -12,11 +12,9 @@ import {
   Text,
 } from 'react-native';
 import { useField } from 'react-final-form';
+import Config from 'FinalFormReactNative/services/config';
 
-const Fonts = {
-  Regular: 'AppleSDGothicNeo-Regular',
-  Bold: 'AppleSDGothicNeo-Bold',
-};
+const { Fonts } = Config;
 
 const Error = ({ name }) => {
   const {

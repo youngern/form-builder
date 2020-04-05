@@ -11,6 +11,9 @@ import {
   StyleSheet,
   TextInput,
 } from 'react-native';
+import Config from 'FinalFormReactNative/services/config';
+
+const { Fonts } = Config;
 
 const Input = React.forwardRef((props, ref) => {
   const { checked, name, error, style, onFocus, ...rest } = props;
@@ -37,7 +40,7 @@ const styles = StyleSheet.create({
     borderColor: 'lightgray',
     color: '#204051',
     fontSize: 20,
-    fontFamily: 'AppleSDGothicNeo-Bold'
+    fontFamily: Fonts.Bold
   },
 
   error: {
@@ -47,7 +50,7 @@ const styles = StyleSheet.create({
   errorText: {
     color: '#d63447',
     fontSize: 14,
-    fontFamily: 'AppleSDGothicNeo-Regular'
+    fontFamily: Fonts.Regular,
   },
 });
 

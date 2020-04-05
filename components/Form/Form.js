@@ -6,90 +6,69 @@ import {
   View,
   Text,
   StatusBar,
-  Modal,
 } from 'react-native';
 import _ from 'lodash';
-import { createForm } from 'final-form';
 import { Form, Field } from 'react-final-form';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-import { Divider, Button, Header, Icon } from 'react-native-elements';
+import Config from 'FinalFormReactNative/services/config';
 import Input from './Input';
 import Error from './Error';
+import Label from './Label';
 import AddField from './AddField';
 import FormButton from './FormButton';
+import Modal from '../Modal';
 
-import api from '../../services/api';
+const descriptionPlaceholder = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+`
 
-const onSubmit = async values => {
-  const schema = Object.keys(values).map((fieldName) => ({
-    type: 'input',
-    name: fieldName,
-    placeholder: _.startCase(fieldName),
-    initialValue: values[fieldName],
-    constraints: []
-  }));
-
-  console.log('schema', schema);
-
-  await api.set(schema);
-}
-
+const { Fonts, Colors } = Config;
 const required = (value) => value ? undefined : 'required';
 const validate = (constraints) => value => constraints.reduce((error, constraint) => error || required(value), undefined);
+const Description = ({ text }) => {
+  return (
+    <Text style={styles.description}>
+      {text.trim()}
+    </Text>
+  )
+}
 
-const Label = ({ name }) => (
-  <Text style={styles.label}>{_.startCase(name)}</Text>
-)
-
-const App = (props) => {
-  const { fields = [] } = props;
-
+const Buildable = (props) => {
+  const { fields = [], onSubmit } = props;
   const [inputs, setInputs] = useState(fields);
-  useEffect(() => {
-    setInputs(fields);
-  }, [fields])
+  useEffect(() => { setInputs(fields); }, [fields])
+
+  const submit = async values => {
+    const schema = Object.keys(values).map((fieldName) => ({
+      type: 'input',
+      name: fieldName,
+      placeholder: _.startCase(fieldName),
+      initialValue: values[fieldName],
+      constraints: []
+    }));
+  
+    onSubmit(schema);
+  }
 
   const [modalVisible, setModalVisible] = useState(false);
-  const initialValues = inputs.reduce((values, { name, initialValue}) => ({ ...values, [name]: initialValue }), {})
 
-  // const form = createForm({
-  //   onSubmit,
-  //   initialValues,
-  //   subscription: { submitting: true }
-  // });
-
-  const addField = ({ name, placeholder, initialValue }) => {
+  const addField = ({ name, ...rest }) => {
     const newInputs = [
       ...inputs,
       {
         type: 'input',
-        initialValue,
         name: _.snakeCase(name),
-        placeholder,
-        constraints: []
+        ...rest,
       },
-    ]
-
+    ];
     setInputs(newInputs);
-    setModalVisible(false);
   }
 
   return (
     <>
       <Form
-        onSubmit={onSubmit}
-        initialValues={initialValues}
+        onSubmit={submit}
         subscription={{ submitting: true }}
       >
-        {({
-          handleSubmit,
-          form,
-          // form: {
-          //   mutators: { push, pop }
-          // }, // injected from final-form-arrays above
-          values,
-          submitting,
-        }) => (
+        {({ handleSubmit }) => (
           <View style={styles.container}>
             <StatusBar barStyle="dark-content" />
             <SafeAreaView>
@@ -98,6 +77,7 @@ const App = (props) => {
                 name="form_name"
                 placeholder="Form Name"
                 validate={required}
+                initialValue={_.get(_.find(inputs, ['name', 'form_name']), 'initialValue')}
               >
                 {({ input, meta, ...rest }) => {
                   const error = (meta.touched && meta.error) || undefined;
@@ -116,7 +96,7 @@ const App = (props) => {
             </SafeAreaView>
             <ScrollView
               contentInsetAdjustmentBehavior="automatic"
-              style={styles.container}
+              style={[styles.container, { paddingTop: 10 }]}
             >
               <SafeAreaView>
                 {_.reject(inputs, ({ name }) => name === 'form_name').map(props => {
@@ -124,7 +104,10 @@ const App = (props) => {
 
                   return (
                     <Fragment key={name}>
-                      <Label name={name} />
+                      <View style={styles.section}>
+                        <Label name={name} />
+                        <Description text={descriptionPlaceholder} />
+                      </View>
                       <Field
                         key={name}
                         subscription={{ value: true, active: true, touched: true, error: true }}
@@ -155,25 +138,11 @@ const App = (props) => {
                 />
               </SafeAreaView>
             </ScrollView>
-            {/* <View style={styles.spy}>
-              <FormSpy subscription={{ values: true }}>
-                {({ values }) => (
-                  <Text>{JSON.stringify(values, undefined, 2)}</Text>
-                )}
-              </FormSpy>
-            </View> */}
-            <Divider style={{ backgroundColor: 'lightgray' }} />
             <View style={styles.footer}>
               <FormButton
-                label="Submit"
+                label="Save"
                 onPress={handleSubmit}
                 style={styles.submit}
-              />
-              <FormButton
-                label="Reset"
-                labelStyle={{ color: 'black' }}
-                onPress={() => { form.reset(); }}
-                style={styles.reset}
               />
             </View>
           </View>
@@ -182,38 +151,27 @@ const App = (props) => {
       <Modal
         animationType="slide"
         visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
-        }}
+        onRequestClose={() => { setModalVisible(false); }}
       >
-        <Header
-          containerStyle={{ borderBottomWidth: undefined }}
-          backgroundColor="#fff"
-          leftComponent={(
-            <Icon
-              name='clear'
-              type='material-icons'
-              color='#4d80e4'
-              onPress={() => { setModalVisible(false); }}
-            />
-          )}
+        <AddField
+          onAdd={values => {
+            addField(values);
+            setModalVisible(false);
+          }}
         />
-        <AddField onAdd={addField} />
       </Modal>
     </>
   );
 };
 
-const baseColor = '#f3fcf9';
-
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: baseColor,
+    backgroundColor: Colors.background,
     flex: 1,
   },
 
   footer: {
-    backgroundColor: baseColor,
+    backgroundColor: Colors.background,
     flexDirection: 'row',
     justifyContent: 'space-around',
     paddingBottom: 25,
@@ -221,7 +179,7 @@ const styles = StyleSheet.create({
 
   formHeader: {
     borderWidth: 0,
-    backgroundColor: baseColor,
+    backgroundColor: Colors.background,
     fontSize: 30,
     color: '#4d80e4',
     padding: 0,
@@ -243,34 +201,20 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 
-  label: {
-    marginLeft: 10,
-    fontSize: 18,
-    color: '#4d80e4',
-  },
-
-  spy: {
-    backgroundColor: Colors.white,
-    padding: 10,
-    marginHorizontal: 10,
-    borderColor: 'lightgray',
-    borderRadius: 5,
-    borderWidth: 1,
-  },
-
   submit: {
     backgroundColor: '#4d80e4',
     borderColor: '#4d80e4'
   },
 
-  reset: {
-    backgroundColor: '#fbfefd',
-    borderColor: '#46b3e6',
+  section: {
+    marginLeft: 10,
   },
-  
-  active: {
-    borderColor: '#46b3e6',
-  },
+
+  description: {
+    fontFamily: Fonts.regular,
+    color: '#679b9b',
+    fontSize: 12
+  }
 });
 
-export default App;
+export default Buildable;
