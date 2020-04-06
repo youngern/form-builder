@@ -27,6 +27,7 @@
     "@react-native-community/eslint-config": "^1.0.0",
     "babel-jest": "^25.2.6",
     "eslint": "^6.8.0",
+    "husky": "^4.2.3",
     "jest": "^25.2.6",
     "metro-react-native-babel-preset": "^0.59.0",
     "prettier": "2.0.3",
@@ -34,5 +35,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
   }
 }
