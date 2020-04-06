@@ -20,14 +20,16 @@ import FormButton from './FormButton';
 import Modal from '../Modal';
 
 const { Colors } = Config;
-const required = (value) => value ? undefined : 'required';
+const required = (value) => (value ? undefined : 'required');
 
 const Buildable = (props) => {
   const { fields = [], onSubmit } = props;
   const [inputs, setInputs] = useState(fields);
   const [fieldValues, setFieldValues] = useState(undefined);
 
-  useEffect(() => { setInputs(fields); }, [fields])
+  useEffect(() => {
+    setInputs(fields);
+  }, [fields]);
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -36,93 +38,100 @@ const Buildable = (props) => {
         onSubmit={onSubmit}
         subscription={{ submitting: true, values: true }}
         mutators={{
-          ...arrayMutators
-        }}
-      >
+          ...arrayMutators,
+        }}>
         {({ handleSubmit, form, values }) => (
           <>
-          <View style={styles.container}>
-            <StatusBar barStyle="dark-content" />
-            <SafeAreaView>
-              <Field
-                subscription={{ value: true, active: true, touched: true, error: true }}
-                name="form_name"
-                placeholder="Form Name"
-                validate={required}
-                initialValue={inputs.form_name}
-              >
-                {({ input, meta, ...rest }) => {
-                  const error = (meta.touched && meta.error) || undefined;
-
-                  return (
-                    <Input
-                      style={styles.formHeader}
-                      selectionColor="#b7efcd"
-                      error={error}
-                      {...input}
-                      {...rest}
-                    />
-                  )
-                }}
-              </Field>
-              <Field
-                subscription={{ value: true, active: true, touched: true, error: true }}
-                name="form_description"
-                placeholder="Enter a description for your form..."
-                initialValue={inputs.form_description}
-              >
-                {({ input, meta, ...rest }) => {
-                  const error = (meta.touched && meta.error) || undefined;
-
-                  return (
-                    <Input
-                      style={styles.formDescription}
-                      selectionColor="#b7efcd"
-                      error={error}
-                      {...input}
-                      {...rest}
-                    />
-                  )
-                }}
-              </Field>
-            </SafeAreaView>
-            <ScrollView
-              contentInsetAdjustmentBehavior="automatic"
-              style={[styles.container, { paddingTop: 10 }]}
-            >
+            <View style={styles.container}>
+              <StatusBar barStyle="dark-content" />
               <SafeAreaView>
-                <FieldArray
-                  name="fields"
-                  initialValue={inputs.fields}
-                >
-                  {({ fields }) =>
-                    fields.map((name, index) => (
-                      <TouchableOpacity
-                        key={name}
-                        onPress={() => {
-                          const currentFieldValues = _.get(inputs, name);
-                          setFieldValues({ ...currentFieldValues, fieldIndex: index });
-                          setModalVisible(true);
-                        }}
-                        style={styles.section}
-                      >
-                        <FieldGroup
-                          name={name}
-                          placeholder={_.get(values, `${name}.placeholder`)}
-                        />
-                      </TouchableOpacity>
-                    ))
-                  }
-                </FieldArray>
-                <FormButton
-                  label="Add Field"
-                  onPress={() => { setModalVisible(true); }}
-                  style={styles.fieldButton}
-                  labelStyle={{ fontSize: 20, color: '#679b9b' }}
-                />
+                <Field
+                  subscription={{
+                    value: true,
+                    active: true,
+                    touched: true,
+                    error: true,
+                  }}
+                  name="form_name"
+                  placeholder="Form Name"
+                  validate={required}
+                  initialValue={inputs.form_name}>
+                  {({ input, meta, ...rest }) => {
+                    const error = (meta.touched && meta.error) || undefined;
+
+                    return (
+                      <Input
+                        style={styles.formHeader}
+                        selectionColor="#b7efcd"
+                        error={error}
+                        {...input}
+                        {...rest}
+                      />
+                    );
+                  }}
+                </Field>
+                <Field
+                  subscription={{
+                    value: true,
+                    active: true,
+                    touched: true,
+                    error: true,
+                  }}
+                  name="form_description"
+                  placeholder="Enter a description for your form..."
+                  initialValue={inputs.form_description}>
+                  {({ input, meta, ...rest }) => {
+                    const error = (meta.touched && meta.error) || undefined;
+
+                    return (
+                      <Input
+                        style={styles.formDescription}
+                        selectionColor="#b7efcd"
+                        error={error}
+                        {...input}
+                        {...rest}
+                      />
+                    );
+                  }}
+                </Field>
               </SafeAreaView>
-            </ScrollView>
-            {/* <FormSpy subscription={{ values: true }}>
+              <ScrollView
+                contentInsetAdjustmentBehavior="automatic"
+                style={[styles.container, { paddingTop: 10 }]}>
+                <SafeAreaView>
+                  <FieldArray name="fields" initialValue={inputs.fields}>
+                    {({ fields }) =>
+                      fields.map((name, index) => (
+                        <TouchableOpacity
+                          key={name}
+                          onPress={() => {
+                            const currentFieldValues = _.get(inputs, name);
+                            setFieldValues({
+                              ...currentFieldValues,
+                              fieldIndex: index,
+                            });
+                            setModalVisible(true);
+                          }}
+                          style={styles.section}>
+                          <FieldGroup
+                            name={name}
+                            placeholder={_.get(values, `${name}.placeholder`)}
+                          />
+                        </TouchableOpacity>
+                      ))
+                    }
+                  </FieldArray>
+                  <FormButton
+                    label="Add Field"
+                    onPress={() => {
+                      setModalVisible(true);
+                    }}
+                    style={styles.fieldButton}
+                    labelStyle={{ fontSize: 20, color: '#679b9b' }}
+                  />
+                </SafeAreaView>
+              </ScrollView>
+              {/* <FormSpy subscription={{ values: true }}>
               {({ values }) => {
                 console.log('values', values);
                 return (
@@ -132,42 +141,43 @@ const Buildable = (props) => {
                 );
               }}
             </FormSpy> */}
-            <View style={styles.footer}>
-              <FormButton
-                label="Save"
-                onPress={handleSubmit}
-                style={styles.submit}
-              />
+              <View style={styles.footer}>
+                <FormButton
+                  label="Save"
+                  onPress={handleSubmit}
+                  style={styles.submit}
+                />
+              </View>
             </View>
-          </View>
-          <Modal
-            animationType="slide"
-            visible={modalVisible}
-            onRequestClose={() => { setModalVisible(false); }}
-          >
-            <AddField
-              values={fieldValues}
-              onAdd={values => {
-                const { name, fieldIndex, ...rest } = values;
-                const isPersisted = !!fieldValues;
-                const fieldParams = {
-                  type: 'input',
-                  label: name,
-                  name: _.snakeCase(name),
-                  ...rest,
-                };
-
-                if (isPersisted) {
-                  form.mutators.update('fields', fieldIndex, fieldParams);
-                } else {
-                  form.mutators.push('fields', fieldParams);
-                }
-
+            <Modal
+              animationType="slide"
+              visible={modalVisible}
+              onRequestClose={() => {
                 setModalVisible(false);
-                setFieldValues(undefined);
-              }}
-            />
-          </Modal>
+              }}>
+              <AddField
+                values={fieldValues}
+                onAdd={(values) => {
+                  const { name, fieldIndex, ...rest } = values;
+                  const isPersisted = !!fieldValues;
+                  const fieldParams = {
+                    type: 'input',
+                    label: name,
+                    name: _.snakeCase(name),
+                    ...rest,
+                  };
+
+                  if (isPersisted) {
+                    form.mutators.update('fields', fieldIndex, fieldParams);
+                  } else {
+                    form.mutators.push('fields', fieldParams);
+                  }
+
+                  setModalVisible(false);
+                  setFieldValues(undefined);
+                }}
+              />
+            </Modal>
           </>
         )}
       </Form>
@@ -224,7 +234,7 @@ const styles = StyleSheet.create({
 
   submit: {
     backgroundColor: '#4d80e4',
-    borderColor: '#4d80e4'
+    borderColor: '#4d80e4',
   },
 
   section: {

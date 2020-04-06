@@ -10,32 +10,39 @@ const FieldGroup = ({ name, placeholder }) => {
     <>
       <Field
         name={`${name}.name`}
-        subscription={{ value: true, active: true, touched: true, error: true }}
-      >
+        subscription={{
+          value: true,
+          active: true,
+          touched: true,
+          error: true,
+        }}>
         {({ input }) => <Label {...input} />}
       </Field>
       <Field
         name={`${name}.description`}
-        subscription={{ value: true, active: true, touched: true, error: true }}
-      >
+        subscription={{
+          value: true,
+          active: true,
+          touched: true,
+          error: true,
+        }}>
         {({ input }) => <Description {...input} />}
       </Field>
       <Field
         name={`${name}.initialValue`}
         placeholder={placeholder}
-        subscription={{ value: true, active: true, touched: true, error: true }}
-      >
+        subscription={{
+          value: true,
+          active: true,
+          touched: true,
+          error: true,
+        }}>
         {({ input, meta, ...rest }) => {
-          return (
-            <Input
-              {...input}
-              {...rest}
-            />
-          )
+          return <Input {...input} {...rest} />;
         }}
       </Field>
     </>
-  )
-}
+  );
+};
 
 export default FieldGroup;

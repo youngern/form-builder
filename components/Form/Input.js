@@ -7,10 +7,7 @@
  */
 
 import React from 'react';
-import {
-  StyleSheet,
-  TextInput,
-} from 'react-native';
+import { StyleSheet, TextInput } from 'react-native';
 import Config from 'FinalFormReactNative/services/config';
 
 const { Fonts } = Config;
@@ -24,7 +21,7 @@ const Input = React.forwardRef((props, ref) => {
       ref={ref}
       style={[styles.textInput, style, error && styles.error]}
     />
-  )
+  );
 });
 
 const styles = StyleSheet.create({
@@ -38,7 +35,7 @@ const styles = StyleSheet.create({
     borderColor: 'lightgray',
     color: '#204051',
     fontSize: 20,
-    fontFamily: Fonts.Bold
+    fontFamily: Fonts.Bold,
   },
 
   error: {

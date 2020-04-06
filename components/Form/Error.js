@@ -7,10 +7,7 @@
  */
 
 import React from 'react';
-import {
-  View,
-  Text,
-} from 'react-native';
+import { View, Text } from 'react-native';
 import { useField } from 'react-final-form';
 import Config from 'FinalFormReactNative/services/config';
 
@@ -18,7 +15,7 @@ const { Fonts } = Config;
 
 const Error = ({ name }) => {
   const {
-    meta: { touched, error }
+    meta: { touched, error },
   } = useField(name, { subscription: { touched: true, error: true } });
   return (
     <View style={{ height: 14 }}>
@@ -29,12 +26,10 @@ const Error = ({ name }) => {
             color: '#d63447',
             fontSize: 14,
             fontFamily: Fonts.Regular,
-          }}
-        >
-        {error}
+          }}>
+          {error}
         </Text>
-      )
-      : null}
+      ) : null}
     </View>
   );
 };

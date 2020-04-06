@@ -1,19 +1,12 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const FormButton = ({ label, style, labelStyle = {}, ...props }) => (
-  <TouchableOpacity
-    style={[styles.button, style]}
-    {...props}
-  >
+  <TouchableOpacity style={[styles.button, style]} {...props}>
     <Text style={[styles.buttonText, labelStyle]}>{label}</Text>
   </TouchableOpacity>
-)
+);
 
 const styles = StyleSheet.create({
   button: {
@@ -31,6 +24,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: Colors.white,
   },
-})
+});
 
 export default FormButton;
