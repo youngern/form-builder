@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Text,
-  Switch,
-} from 'react-native';
+import { SafeAreaView, StyleSheet, View, Text, Switch } from 'react-native';
 import _ from 'lodash';
 import { Form, Field } from 'react-final-form';
 
@@ -24,22 +18,21 @@ const SwitchInput = React.forwardRef((props, ref) => {
         paddingRight: 5,
         paddingVertical: 10,
         marginVertical: 5,
-        alignItems: 'flex-start'
-      }}
-    >
+        alignItems: 'flex-start',
+      }}>
       <Switch
         ref={ref}
-        trackColor={{ false: "#edffea", true: "#75daad" }}
+        trackColor={{ false: '#edffea', true: '#75daad' }}
         thumbColor="#fff"
         ios_backgroundColor="#ed6663"
         onValueChange={onChange}
         {...rest}
       />
     </View>
-  )
+  );
 });
 
-const required = (value) => value ? undefined : 'required';
+const required = (value) => (value ? undefined : 'required');
 const App = (props) => {
   const { onAdd, values = undefined } = props;
 
@@ -52,21 +45,19 @@ const App = (props) => {
             <View style={styles.section}>
               <Label value="name" />
               <Field
-                subscription={{ value: true, active: true, touched: true, error: true }}
+                subscription={{
+                  value: true,
+                  active: true,
+                  touched: true,
+                  error: true,
+                }}
                 name="name"
                 placeholder="Name"
-                validate={required}
-              >
+                validate={required}>
                 {({ input, meta, ...rest }) => {
                   const error = (meta.touched && meta.error) || undefined;
 
-                  return (
-                    <Input
-                      error={error}
-                      {...input}
-                      {...rest}
-                    />
-                  )
+                  return <Input error={error} {...input} {...rest} />;
                 }}
               </Field>
               <Error name="name" />
@@ -74,20 +65,18 @@ const App = (props) => {
             <View style={styles.section}>
               <Label value="description" />
               <Field
-                subscription={{ value: true, active: true, touched: true, error: true }}
+                subscription={{
+                  value: true,
+                  active: true,
+                  touched: true,
+                  error: true,
+                }}
                 name="description"
-                placeholder="Description"
-              >
+                placeholder="Description">
                 {({ input, meta, ...rest }) => {
                   const error = (meta.touched && meta.error) || undefined;
 
-                  return (
-                    <Input
-                      error={error}
-                      {...input}
-                      {...rest}
-                    />
-                  )
+                  return <Input error={error} {...input} {...rest} />;
                 }}
               </Field>
             </View>
@@ -95,20 +84,18 @@ const App = (props) => {
             <View style={styles.section}>
               <Label value="placeholder" />
               <Field
-                subscription={{ value: true, active: true, touched: true, error: true }}
+                subscription={{
+                  value: true,
+                  active: true,
+                  touched: true,
+                  error: true,
+                }}
                 name="placeholder"
-                placeholder="Placeholder"
-              >
+                placeholder="Placeholder">
                 {({ input, meta, ...rest }) => {
                   const error = (meta.touched && meta.error) || undefined;
 
-                  return (
-                    <Input
-                      error={error}
-                      {...input}
-                      {...rest}
-                    />
-                  )
+                  return <Input error={error} {...input} {...rest} />;
                 }}
               </Field>
               <Error name="name" />
@@ -116,20 +103,18 @@ const App = (props) => {
             <View style={styles.section}>
               <Label value="initialValue" />
               <Field
-                subscription={{ value: true, active: true, touched: true, error: true }}
+                subscription={{
+                  value: true,
+                  active: true,
+                  touched: true,
+                  error: true,
+                }}
                 name="initialValue"
-                placeholder="Initial Value"
-              >
+                placeholder="Initial Value">
                 {({ input, meta, ...rest }) => {
                   const error = (meta.touched && meta.error) || undefined;
 
-                  return (
-                    <Input
-                      error={error}
-                      {...input}
-                      {...rest}
-                    />
-                  )
+                  return <Input error={error} {...input} {...rest} />;
                 }}
               </Field>
               <Error name="initialValue" />
@@ -137,21 +122,19 @@ const App = (props) => {
             <View style={styles.section}>
               <Label value="required" />
               <Field
-                subscription={{ value: true, active: true, touched: true, error: true }}
+                subscription={{
+                  value: true,
+                  active: true,
+                  touched: true,
+                  error: true,
+                }}
                 name="required"
                 placeholder="Required"
-                initialValue={false}
-              >
+                initialValue={false}>
                 {({ input, meta, ...rest }) => {
                   const error = (meta.touched && meta.error) || undefined;
 
-                  return (
-                    <SwitchInput
-                      error={error}
-                      {...input}
-                      {...rest}
-                    />
-                  )
+                  return <SwitchInput error={error} {...input} {...rest} />;
                 }}
               </Field>
               <Error name="required" />
@@ -211,21 +194,21 @@ const styles = StyleSheet.create({
 
   submit: {
     backgroundColor: '#4d80e4',
-    borderColor: '#4d80e4'
+    borderColor: '#4d80e4',
   },
 
   reset: {
     backgroundColor: '#fbfefd',
     borderColor: '#46b3e6',
   },
-  
+
   active: {
     borderColor: '#46b3e6',
   },
 
   section: {
     marginHorizontal: 10,
-  }
+  },
 });
 
 export default App;
