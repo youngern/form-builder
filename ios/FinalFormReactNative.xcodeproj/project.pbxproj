@@ -59,6 +59,7 @@
 		3CE3B2F64CCC9DC5F36767E1 /* Pods-FinalFormReactNative-FinalFormReactNativeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative-FinalFormReactNativeTests.debug.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative-FinalFormReactNativeTests/Pods-FinalFormReactNative-FinalFormReactNativeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FB6DC97D42812B7664F599F /* libPods-FinalFormReactNative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinalFormReactNative.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468A5C252FF0FE0150E21273 /* Pods-FinalFormReactNative-FinalFormReactNativeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative-FinalFormReactNativeTests.release.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative-FinalFormReactNativeTests/Pods-FinalFormReactNative-FinalFormReactNativeTests.release.xcconfig"; sourceTree = "<group>"; };
+		4BA57FDA24417B9100EA310C /* FinalFormReactNative.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = FinalFormReactNative.entitlements; path = FinalFormReactNative/FinalFormReactNative.entitlements; sourceTree = "<group>"; };
 		5A8C1F26FA1EBFD46F92C73E /* libPods-FinalFormReactNative-FinalFormReactNativeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinalFormReactNative-FinalFormReactNativeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63898972E819528F813483B8 /* Pods-FinalFormReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative.release.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative/Pods-FinalFormReactNative.release.xcconfig"; sourceTree = "<group>"; };
 		64DFC5510547F5AE0C254929 /* Pods-FinalFormReactNative-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative-tvOSTests/Pods-FinalFormReactNative-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		13B07FAE1A68108700A75B9A /* FinalFormReactNative */ = {
 			isa = PBXGroup;
 			children = (
+				4BA57FDA24417B9100EA310C /* FinalFormReactNative.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -293,7 +295,9 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = QBR79ABEUK;
 						LastSwiftMigration = 1120;
+						ProvisioningStyle = Manual;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -726,7 +730,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_ENTITLEMENTS = FinalFormReactNative/FinalFormReactNative.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = QBR79ABEUK;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -739,8 +747,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.youngern.playground.FinalFormReactNative;
 				PRODUCT_NAME = FinalFormReactNative;
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.youngern.playground.FinalFormReactNative";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -753,7 +762,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_ENTITLEMENTS = FinalFormReactNative/FinalFormReactNative.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = QBR79ABEUK;
 				INFOPLIST_FILE = FinalFormReactNative/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -761,8 +774,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.youngern.playground.FinalFormReactNative;
 				PRODUCT_NAME = FinalFormReactNative;
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.youngern.playground.FinalFormReactNative";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
