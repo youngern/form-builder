@@ -13,7 +13,17 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
-default_platform(:ios)
+# default_platform(:ios)
+
+before_all do
+  ensure_git_branch(branch: 'fastlane')
+  ensure_git_status_clean
+  git_pull
+end
+
+platform :android do
+  # Android Lanes
+end
 
 platform :ios do
   desc "Description of what the lane does"
