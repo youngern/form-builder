@@ -18,7 +18,7 @@ setup_travis
 default_platform(:ios)
 
 before_all do
-  ensure_git_branch(branch: 'fastlane')
+  # ensure_git_branch(branch: 'fastlane')
   # ensure_git_status_clean
   # git_pull
 end
