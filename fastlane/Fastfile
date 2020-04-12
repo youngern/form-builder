@@ -58,11 +58,11 @@ platform :ios do
       suppress_xcode_output: true
     )
 
-    # upload_to_testflight(
-    #   username: 'ysong028@gmail.com',
-    #   team_id: '119158022',
-    #   app_identifier: 'com.youngern.playground.FinalFormReactNative',
-    #   skip_waiting_for_build_processing: true
-    # )
+    upload_to_testflight(
+      username: 'ysong028@gmail.com',
+      team_id: '119158022',
+      app_identifier: 'com.youngern.playground.FinalFormReactNative',
+      skip_waiting_for_build_processing: true
+    )
   end
 end
