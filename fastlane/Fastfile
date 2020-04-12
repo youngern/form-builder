@@ -42,6 +42,7 @@ platform :ios do
   end
 
   lane :screenshots do
+    snapshot
   end
 
   desc 'Ship to Testflight.'
