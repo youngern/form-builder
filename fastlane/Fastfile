@@ -23,41 +23,39 @@ before_all do
   # git_pull
 end
 
-platform :android do
-  desc 'Build the Android application.'
-  private_lane :build do
-    gradle(task: 'clean', project_dir: 'android/')
-    gradle(task: 'assemble', build_type: 'Release', project_dir: 'android/')
-  end
-end
+# platform :android do
+#   desc 'Build the Android application.'
+#   private_lane :build do
+#     gradle(task: 'clean', project_dir: 'android/')
+#     gradle(task: 'assemble', build_type: 'Release', project_dir: 'android/')
+#   end
+# end
 
 platform :ios do
   desc "Description of what the lane does"
   lane :prepare do
     # add actions here: https://docs.fastlane.tools/actions
     appicon(
-      appicon_image_file: '../Assets/Deploy/AppIcon.png',
+      appicon_image_file: './Assets/Deploy/AppIcon.png',
       appicon_devices: [:ipad, :iphone, :ios_marketing]
     )
   end
 
   desc 'Ship to Testflight.'
   lane :beta do
-    js_unit
     sync_code_signing(
       type: "appstore",
       team_id: 'QBR79ABEUK'
     )
 
-    increment_build_number(xcodeproj: "FinalFormReactNative.xcodeproj")
+    increment_build_number(xcodeproj: "./ios/FinalFormReactNative.xcodeproj")
 
     build_app(
       scheme: 'FinalFormReactNative',
-      workspace: 'FinalFormReactNative.xcworkspace',
+      workspace: './ios/FinalFormReactNative.xcworkspace',
       include_symbols: false
     )
 
-    # Might want to do something else here
     upload_to_testflight(
       username: 'ysong028@gmail.com',
       team_id: '119158022',
