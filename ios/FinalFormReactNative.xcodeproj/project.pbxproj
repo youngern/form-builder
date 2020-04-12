@@ -12,12 +12,21 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		4B1662CF2443B767003D29F6 /* FinalFormReactNativeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1662CE2443B767003D29F6 /* FinalFormReactNativeUITests.swift */; };
+		4B1662D72443C3C5003D29F6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1662D62443C3C5003D29F6 /* SnapshotHelper.swift */; };
 		A52DC45A68FF8077E17E8427 /* libPods-FinalFormReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB6DC97D42812B7664F599F /* libPods-FinalFormReactNative.a */; };
 		BB0A99E6C9CAF05F85FBBC2F /* libPods-FinalFormReactNative-FinalFormReactNativeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8C1F26FA1EBFD46F92C73E /* libPods-FinalFormReactNative-FinalFormReactNativeTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = FinalFormReactNative;
+		};
+		4B1662D12443B767003D29F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
@@ -41,6 +50,10 @@
 		3CE3B2F64CCC9DC5F36767E1 /* Pods-FinalFormReactNative-FinalFormReactNativeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative-FinalFormReactNativeTests.debug.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative-FinalFormReactNativeTests/Pods-FinalFormReactNative-FinalFormReactNativeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FB6DC97D42812B7664F599F /* libPods-FinalFormReactNative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinalFormReactNative.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468A5C252FF0FE0150E21273 /* Pods-FinalFormReactNative-FinalFormReactNativeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative-FinalFormReactNativeTests.release.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative-FinalFormReactNativeTests/Pods-FinalFormReactNative-FinalFormReactNativeTests.release.xcconfig"; sourceTree = "<group>"; };
+		4B1662CC2443B767003D29F6 /* FinalFormReactNativeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalFormReactNativeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B1662CE2443B767003D29F6 /* FinalFormReactNativeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalFormReactNativeUITests.swift; sourceTree = "<group>"; };
+		4B1662D02443B767003D29F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B1662D62443C3C5003D29F6 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		4BA57FDA24417B9100EA310C /* FinalFormReactNative.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = FinalFormReactNative.entitlements; path = FinalFormReactNative/FinalFormReactNative.entitlements; sourceTree = "<group>"; };
 		5A8C1F26FA1EBFD46F92C73E /* libPods-FinalFormReactNative-FinalFormReactNativeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinalFormReactNative-FinalFormReactNativeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63898972E819528F813483B8 /* Pods-FinalFormReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative.release.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative/Pods-FinalFormReactNative.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +76,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A52DC45A68FF8077E17E8427 /* libPods-FinalFormReactNative.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B1662C92443B767003D29F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +132,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4B1662CD2443B767003D29F6 /* FinalFormReactNativeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4B1662D62443C3C5003D29F6 /* SnapshotHelper.swift */,
+				4B1662CE2443B767003D29F6 /* FinalFormReactNativeUITests.swift */,
+				4B1662D02443B767003D29F6 /* Info.plist */,
+			);
+			path = FinalFormReactNativeUITests;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +155,7 @@
 				13B07FAE1A68108700A75B9A /* FinalFormReactNative */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* FinalFormReactNativeTests */,
+				4B1662CD2443B767003D29F6 /* FinalFormReactNativeUITests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BDA9200F8F1B541E42D09C97 /* Pods */,
@@ -139,6 +170,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* FinalFormReactNative.app */,
 				00E356EE1AD99517003FC87E /* FinalFormReactNativeTests.xctest */,
+				4B1662CC2443B767003D29F6 /* FinalFormReactNativeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,12 +230,31 @@
 			productReference = 13B07F961A680F5B00A75B9A /* FinalFormReactNative.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4B1662CB2443B767003D29F6 /* FinalFormReactNativeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B1662D32443B767003D29F6 /* Build configuration list for PBXNativeTarget "FinalFormReactNativeUITests" */;
+			buildPhases = (
+				4B1662C82443B767003D29F6 /* Sources */,
+				4B1662C92443B767003D29F6 /* Frameworks */,
+				4B1662CA2443B767003D29F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B1662D22443B767003D29F6 /* PBXTargetDependency */,
+			);
+			name = FinalFormReactNativeUITests;
+			productName = FinalFormReactNativeUITests;
+			productReference = 4B1662CC2443B767003D29F6 /* FinalFormReactNativeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -214,6 +265,12 @@
 						DevelopmentTeam = QBR79ABEUK;
 						LastSwiftMigration = 1120;
 						ProvisioningStyle = Manual;
+					};
+					4B1662CB2443B767003D29F6 = {
+						CreatedOnToolsVersion = 11.3;
+						DevelopmentTeam = QBR79ABEUK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 				};
 			};
@@ -232,6 +289,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* FinalFormReactNative */,
 				00E356ED1AD99517003FC87E /* FinalFormReactNativeTests */,
+				4B1662CB2443B767003D29F6 /* FinalFormReactNativeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -250,6 +308,13 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B1662CA2443B767003D29F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +514,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4B1662C82443B767003D29F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B1662CF2443B767003D29F6 /* FinalFormReactNativeUITests.swift in Sources */,
+				4B1662D72443C3C5003D29F6 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -456,6 +530,11 @@
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* FinalFormReactNative */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+		4B1662D22443B767003D29F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* FinalFormReactNative */;
+			targetProxy = 4B1662D12443B767003D29F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -570,6 +649,61 @@
 				PROVISIONING_PROFILE_SPECIFIER = Distribution;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		4B1662D42443B767003D29F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QBR79ABEUK;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FinalFormReactNativeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youngern.playground.FinalFormReactNativeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FinalFormReactNative;
+			};
+			name = Debug;
+		};
+		4B1662D52443B767003D29F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = QBR79ABEUK;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FinalFormReactNativeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youngern.playground.FinalFormReactNativeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FinalFormReactNative;
 			};
 			name = Release;
 		};
@@ -705,6 +839,15 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B1662D32443B767003D29F6 /* Build configuration list for PBXNativeTarget "FinalFormReactNativeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B1662D42443B767003D29F6 /* Debug */,
+				4B1662D52443B767003D29F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
