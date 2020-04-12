@@ -13,16 +13,20 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
-# default_platform(:ios)
+default_platform(:ios)
 
 before_all do
   ensure_git_branch(branch: 'fastlane')
-  ensure_git_status_clean
-  git_pull
+  # ensure_git_status_clean
+  # git_pull
 end
 
 platform :android do
-  # Android Lanes
+  desc 'Build the Android application.'
+  private_lane :build do
+    gradle(task: 'clean', project_dir: 'android/')
+    gradle(task: 'assemble', build_type: 'Release', project_dir: 'android/')
+  end
 end
 
 platform :ios do
@@ -32,10 +36,35 @@ platform :ios do
 
     appicon(appicon_image_file: '../Assets/Deploy/AppIcon.png',
       appicon_devices: [:ipad, :iphone, :ios_marketing])
-  
+  end
+
+  desc 'Fetch certificates and provisioning profiles'
+  lane :certificates do
+    match(app_identifier: 'com.youngern.playground.FinalFormReactNative', type: 'development', readonly: true)
+    match(app_identifier: 'com.youngern.playground.FinalFormReactNative', type: 'appstore', readonly: true)
   end
 
   lane :test do
     js_unit
+  end
+
+  desc 'Build the iOS application.'
+  # private_lane :build do
+  #   certificates
+  #   increment_build_number(xcodeproj: './FinalFormReactNative.xcodeproj')
+  #   gym(scheme: 'FinalFormReactNative', workspace: './FinalFormReactNative.xcworkspace')
+  # end
+
+  desc 'Ship to Testflight.'
+  lane :beta do
+    sync_code_signing(type: "appstore")
+    increment_build_number(
+      build_number: latest_testflight_build_number + 1,
+      xcodeproj: "FinalFormReactNative.xcodeproj"
+    )
+    build_app(scheme: 'FinalFormReactNative', workspace: 'FinalFormReactNative.xcworkspace')
+
+    # Might want to do something else here
+    upload_to_testflight
   end
 end

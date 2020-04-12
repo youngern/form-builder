@@ -733,7 +733,7 @@
 				CODE_SIGN_ENTITLEMENTS = FinalFormReactNative/FinalFormReactNative.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = QBR79ABEUK;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -763,9 +763,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = FinalFormReactNative/FinalFormReactNative.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = QBR79ABEUK;
 				INFOPLIST_FILE = FinalFormReactNative/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -776,7 +776,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youngern.playground.FinalFormReactNative;
 				PRODUCT_NAME = FinalFormReactNative;
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.youngern.playground.FinalFormReactNative";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.youngern.playground.FinalFormReactNative";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
