@@ -13,4 +13,4 @@ jobs:
       osx_image: xcode9.4
       before_install: bundle install
       install: yarn
-      script: fastlane beta
+      script: travis_wait fastlane beta
