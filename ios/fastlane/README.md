@@ -21,11 +21,6 @@ or alternatively using `brew cask install fastlane`
 fastlane ios prepare
 ```
 Description of what the lane does
-### ios certificates
-```
-fastlane ios certificates
-```
-Fetch certificates and provisioning profiles
 ### ios test
 ```
 fastlane ios test
@@ -35,8 +30,6 @@ fastlane ios test
 ```
 fastlane ios beta
 ```
-Build the iOS application.
-
 Ship to Testflight.
 
 ----
