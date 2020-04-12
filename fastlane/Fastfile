@@ -43,10 +43,10 @@ platform :ios do
 
   desc 'Ship to Testflight.'
   lane :beta do
-    sync_code_signing(
-      type: "appstore",
-      team_id: 'QBR79ABEUK'
-    )
+    # sync_code_signing(
+    #   type: "appstore",
+    #   team_id: 'QBR79ABEUK'
+    # )
 
     increment_build_number(xcodeproj: "./ios/FinalFormReactNative.xcodeproj")
 
