@@ -54,6 +54,7 @@ platform :ios do
       scheme: 'FinalFormReactNative',
       workspace: './ios/FinalFormReactNative.xcworkspace',
       export_xcargs: "-allowProvisioningUpdates",
+      silent: true
     )
 
     # upload_to_testflight(
