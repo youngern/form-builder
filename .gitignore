@@ -21,6 +21,7 @@ DerivedData
 *.ipa
 *.dSYM.zip
 *.xcuserstate
+*.p12
 
 # Android/IntelliJ
 #
