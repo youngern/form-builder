@@ -8,13 +8,14 @@
 
 if (__DEV__) {
   import('./support/ReactotronConfig').then(() =>
-    console.log('Reactotron Configured'),
+    Logger.log('Reactotron Configured'),
   );
 }
 
 import React, { Component } from 'react';
 import Form from './components/Form';
 import api from './services/api';
+import Logger from './services/Logger';
 
 class App extends Component {
   state = {};
@@ -23,14 +24,14 @@ class App extends Component {
     this.setState({ loading: true });
     const fields = await api.get();
 
-    console.log('get fields', fields);
+    Logger.log('get fields', fields);
     this.setState({ loading: false, fields });
   }
 
   setValues = async (values) => {
     this.setState({ loading: true, fields: values });
     await api.set(values);
-    console.log('set values', values);
+    Logger.log('set values', values);
     this.setState({ loading: false });
   };
 

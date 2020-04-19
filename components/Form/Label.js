@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 import _ from 'lodash';
-import Config from 'FinalFormReactNative/services/config';
+import Config from 'final-form-react-native/services/config';
 const { Fonts } = Config;
 
 const Label = ({ value }) => (

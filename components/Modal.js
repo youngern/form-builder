@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, View, StyleSheet } from 'react-native';
 import { Header, Icon } from 'react-native-elements';
-import Config from 'FinalFormReactNative/services/config';
+import Config from 'final-form-react-native/services/config';
 const { Colors } = Config;
 
 const ModalPage = (props) => {

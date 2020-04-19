@@ -12,7 +12,7 @@ import { Form, Field, FormSpy } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
 import arrayMutators from 'final-form-arrays';
 
-import Config from 'FinalFormReactNative/services/config';
+import Config from 'final-form-react-native/services/config';
 import Input from './Input';
 import AddField from './AddField';
 import FieldGroup from './FieldGroup';
@@ -140,16 +140,6 @@ const Buildable = (props) => {
                 style={styles.fieldButton}
                 labelStyle={{ fontSize: 20, color: '#679b9b' }}
               />
-              {/* <FormSpy subscription={{ values: true }}>
-              {({ values }) => {
-                console.log('values', values);
-                return (
-                  <Text>
-                    {JSON.stringify(values, 0, 2)}
-                  </Text> 
-                );
-              }}
-            </FormSpy> */}
               <View style={styles.footer}>
                 <FormButton
                   label="Save"
@@ -167,12 +157,12 @@ const Buildable = (props) => {
               <AddField
                 values={fieldValues}
                 onAdd={(values) => {
-                  const { name, fieldIndex, ...rest } = values;
+                  const { label, fieldIndex, ...rest } = values;
                   const isPersisted = !!fieldValues;
                   const fieldParams = {
                     type: 'input',
-                    label: name,
-                    name: _.snakeCase(name),
+                    label,
+                    name: _.snakeCase(label),
                     ...rest,
                   };
 

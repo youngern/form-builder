@@ -3,7 +3,7 @@ import { SafeAreaView, StyleSheet, View, Text, Switch } from 'react-native';
 import _ from 'lodash';
 import { Form, Field } from 'react-final-form';
 
-import Config from 'FinalFormReactNative/services/config';
+import Config from 'final-form-react-native/services/config';
 import Input from './Input';
 import Error from './Error';
 import Label from './Label';
@@ -43,7 +43,7 @@ const App = (props) => {
           <View>
             <Text style={styles.fieldHeader}>Add Field</Text>
             <View style={styles.section}>
-              <Label value="name" />
+              <Label value="label" />
               <Field
                 subscription={{
                   value: true,
@@ -51,8 +51,8 @@ const App = (props) => {
                   touched: true,
                   error: true,
                 }}
-                name="name"
-                placeholder="Name"
+                name="label"
+                placeholder="Lame"
                 validate={required}>
                 {({ input, meta, ...rest }) => {
                   const error = (meta.touched && meta.error) || undefined;
@@ -60,7 +60,7 @@ const App = (props) => {
                   return <Input error={error} {...input} {...rest} />;
                 }}
               </Field>
-              <Error name="name" />
+              <Error name="label" />
             </View>
             <View style={styles.section}>
               <Label value="description" />
@@ -80,7 +80,7 @@ const App = (props) => {
                 }}
               </Field>
             </View>
-            <Error name="name" />
+            <Error name="description" />
             <View style={styles.section}>
               <Label value="placeholder" />
               <Field
@@ -98,7 +98,7 @@ const App = (props) => {
                   return <Input error={error} {...input} {...rest} />;
                 }}
               </Field>
-              <Error name="name" />
+              <Error name="placeholder" />
             </View>
             <View style={styles.section}>
               <Label value="initialValue" />
