@@ -1,7 +1,16 @@
 jobs:
   include:
-    - stage: JS
+    - stage: Test
       language: node_js
       node_js: 11.11.0
       install: yarn
       script: yarn test
+
+    - stage: Deploy iOS
+      language: node_js
+      node_js: 11.11.0
+      os: osx
+      osx_image: xcode9.4
+      before_install: bundle install
+      install: yarn
+      script: travis_wait fastlane beta

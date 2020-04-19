@@ -21,6 +21,21 @@ or alternatively using `brew cask install fastlane`
 fastlane ios prepare
 ```
 Description of what the lane does
+### ios screenshots
+```
+fastlane ios screenshots
+```
+
+### ios certificates
+```
+fastlane ios certificates
+```
+
+### ios ci
+```
+fastlane ios ci
+```
+Ship to Testflight.
 ### ios beta
 ```
 fastlane ios beta

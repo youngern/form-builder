@@ -45,28 +45,47 @@ platform :ios do
     snapshot
   end
 
-  desc 'Ship to Testflight.'
-  lane :beta do
-    # sync_code_signing(
-    #   type: "appstore",
-    #   team_id: 'QBR79ABEUK'
-    # )
+  lane :certificates do
+    match
+  end
 
+  desc 'Ship to Testflight.'
+  lane :ci do
+    sync_code_signing(readonly: true)
     increment_build_number(xcodeproj: "./ios/FinalFormReactNative.xcodeproj")
     cocoapods(podfile: './ios/Podfile')
     build_app(
       scheme: 'FinalFormReactNative',
       workspace: './ios/FinalFormReactNative.xcworkspace',
-      export_xcargs: "-allowProvisioningUpdates",
       silent: true,
       suppress_xcode_output: true
     )
 
-    upload_to_testflight(
-      username: 'ysong028@gmail.com',
-      team_id: '119158022',
-      app_identifier: 'com.youngern.playground.FinalFormReactNative',
-      skip_waiting_for_build_processing: true
+    # upload_to_testflight(
+    #   username: 'ysong028@gmail.com',
+    #   team_id: '119158022',
+    #   app_identifier: 'com.youngern.playground.FinalFormReactNative',
+    #   skip_waiting_for_build_processing: true
+    # )
+  end
+
+  desc 'Ship to Testflight.'
+  lane :beta do
+    sync_code_signing
+    increment_build_number(xcodeproj: "./ios/FinalFormReactNative.xcodeproj")
+    cocoapods(podfile: './ios/Podfile')
+    build_app(
+      scheme: 'FinalFormReactNative',
+      workspace: './ios/FinalFormReactNative.xcworkspace',
+      silent: true,
+      suppress_xcode_output: true
     )
+
+    # upload_to_testflight(
+    #   username: 'ysong028@gmail.com',
+    #   team_id: '119158022',
+    #   app_identifier: 'com.youngern.playground.FinalFormReactNative',
+    #   skip_waiting_for_build_processing: true
+    # )
   end
 end
