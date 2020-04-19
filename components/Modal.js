@@ -9,34 +9,36 @@ const ModalPage = (props) => {
   const { backgroundColor = Colors.background } = StyleSheet.flatten(style);
 
   return (
-    <Modal
-      onRequestClose={onRequestClose}
-      {...rest}
-    >
+    <Modal onRequestClose={onRequestClose} {...rest}>
       <View style={[styles.container, style]}>
         <Header
           containerStyle={{ borderBottomWidth: undefined }}
           backgroundColor={backgroundColor}
-          leftComponent={(
+          leftComponent={
             <Icon
-              name='clear'
-              type='material-icons'
-              color='#4d80e4'
-              onPress={() => { onRequestClose(); }}
+              accessible
+              accessibilityLabel="Close"
+              testID="CloseIcon"
+              name="clear"
+              type="material-icons"
+              color="#4d80e4"
+              onPress={() => {
+                onRequestClose();
+              }}
             />
-          )}
+          }
         />
         {children}
       </View>
     </Modal>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.background,
-  }
-})
+  },
+});
 
 export default ModalPage;

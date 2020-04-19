@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "reactotron": "open -a Reactotron"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.9.0",
@@ -31,7 +32,8 @@
     "jest": "^25.2.6",
     "metro-react-native-babel-preset": "^0.59.0",
     "prettier": "2.0.3",
-    "react-test-renderer": "16.11.0"
+    "react-test-renderer": "16.11.0",
+    "reactotron-react-native": "^5.0.0"
   },
   "jest": {
     "preset": "react-native"

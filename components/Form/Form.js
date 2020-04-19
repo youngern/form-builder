@@ -23,12 +23,12 @@ const { Colors } = Config;
 const required = (value) => (value ? undefined : 'required');
 
 const Buildable = (props) => {
-  const { fields = [], onSubmit } = props;
+  const { fields = {}, onSubmit } = props;
   const [inputs, setInputs] = useState(fields);
   const [fieldValues, setFieldValues] = useState(undefined);
 
   useEffect(() => {
-    setInputs(fields);
+    setInputs(fields || {});
   }, [fields]);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -61,6 +61,9 @@ const Buildable = (props) => {
 
                     return (
                       <Input
+                        accessible
+                        accessibilityLabel="Form Name"
+                        accessibilityHint="Navigates to the previous screen"
                         style={styles.formHeader}
                         selectionColor="#b7efcd"
                         error={error}
@@ -85,6 +88,9 @@ const Buildable = (props) => {
 
                     return (
                       <Input
+                        accessible
+                        accessibilityLabel="Form Description"
+                        accessibilityHint="Navigates to the previous screen"
                         style={styles.formDescription}
                         selectionColor="#b7efcd"
                         error={error}
@@ -121,16 +127,19 @@ const Buildable = (props) => {
                       ))
                     }
                   </FieldArray>
-                  <FormButton
-                    label="Add Field"
-                    onPress={() => {
-                      setModalVisible(true);
-                    }}
-                    style={styles.fieldButton}
-                    labelStyle={{ fontSize: 20, color: '#679b9b' }}
-                  />
                 </SafeAreaView>
               </ScrollView>
+              <FormButton
+                accessible
+                accessibilityLabel="Add New Field"
+                testID="AddButton"
+                label="Add Field"
+                onPress={() => {
+                  setModalVisible(true);
+                }}
+                style={styles.fieldButton}
+                labelStyle={{ fontSize: 20, color: '#679b9b' }}
+              />
               {/* <FormSpy subscription={{ values: true }}>
               {({ values }) => {
                 console.log('values', values);
@@ -221,6 +230,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fbfefd',
     borderColor: '#679b9b',
     borderWidth: 2,
+    flex: 0,
   },
 
   fieldHeader: {

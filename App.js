@@ -6,12 +6,18 @@
  * @flow strict-local
  */
 
+if (__DEV__) {
+  import('./support/ReactotronConfig').then(() =>
+    console.log('Reactotron Configured'),
+  );
+}
+
 import React, { Component } from 'react';
 import Form from './components/Form';
 import api from './services/api';
 
 class App extends Component {
-  state = {}
+  state = {};
 
   async componentDidMount() {
     this.setState({ loading: true });
@@ -26,17 +32,12 @@ class App extends Component {
     await api.set(values);
     console.log('set values', values);
     this.setState({ loading: false });
-  }
+  };
 
   render() {
     const { fields = [] } = this.state;
 
-    return (
-      <Form
-        fields={fields}
-        onSubmit={this.setValues}
-      />
-    );
+    return <Form fields={fields} onSubmit={this.setValues} />;
   }
 }
 
