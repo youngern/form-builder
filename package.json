@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios": "npx react-native run-ios",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.9.0",
+    "@react-native-community/masked-view": "^0.1.9",
+    "@react-navigation/bottom-tabs": "^5.2.7",
+    "@react-navigation/native": "^5.1.6",
     "final-form": "^4.19.1",
     "final-form-arrays": "^3.0.2",
     "lodash": "^4.17.15",
@@ -20,6 +23,10 @@
     "react-final-form-arrays": "^3.1.1",
     "react-native": "0.62.0",
     "react-native-elements": "^1.2.7",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-reanimated": "^1.8.0",
+    "react-native-safe-area-context": "^0.7.3",
+    "react-native-screens": "^2.5.0",
     "react-native-vector-icons": "^6.6.0"
   },
   "devDependencies": {

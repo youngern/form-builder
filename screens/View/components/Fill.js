@@ -12,16 +12,22 @@ import { FieldArray } from 'react-final-form-arrays';
 import arrayMutators from 'final-form-arrays';
 
 import Config from 'final-form-react-native/services/config';
+import Logger from 'final-form-react-native/services/Logger';
 import Input from 'final-form-react-native/components/Form/Input';
-import FieldGroup from 'final-form-react-native/components/Form/FieldGroup';
 import FormButton from 'final-form-react-native/components/Form/FormButton';
+
+import Question from './Question';
 
 const { Colors } = Config;
 const required = (value) => (value ? undefined : 'required');
 
 const Buildable = (props) => {
-  const { fields = {}, onSubmit } = props;
+  const { fields = {} } = props;
   const [inputs, setInputs] = useState(fields);
+
+  const onSubmit = (values) => {
+    Logger.log('save', values);
+  };
 
   useEffect(() => {
     setInputs(fields || {});
@@ -105,9 +111,9 @@ const Buildable = (props) => {
                 <SafeAreaView>
                   <FieldArray name="fields" initialValue={inputs.fields}>
                     {({ fields }) =>
-                      fields.map((name, index) => (
+                      fields.map((name) => (
                         <View style={styles.section} key={name}>
-                          <FieldGroup
+                          <Question
                             name={name}
                             placeholder={_.get(values, `${name}.placeholder`)}
                           />
