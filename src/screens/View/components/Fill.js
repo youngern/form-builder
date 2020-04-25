@@ -13,8 +13,8 @@ import arrayMutators from 'final-form-arrays';
 
 import Config from 'final-form-react-native/src/services/config';
 import Logger from 'final-form-react-native/src/services/Logger';
-import Input from 'final-form-react-native/components/Form/Input';
-import FormButton from 'final-form-react-native/components/Form/FormButton';
+import Input from 'final-form-react-native/src/components/Form/Input';
+import FormButton from 'final-form-react-native/src/components/Form/FormButton';
 
 import Question from './Question';
 

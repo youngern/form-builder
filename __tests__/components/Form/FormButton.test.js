@@ -1,5 +1,5 @@
 import React from 'react';
-import FormButton from 'final-form-react-native/components/Form/FormButton';
+import FormButton from 'final-form-react-native/src/components/Form/FormButton';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {

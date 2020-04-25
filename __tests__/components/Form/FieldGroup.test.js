@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form } from 'react-final-form';
-import FieldGroup from 'final-form-react-native/components/Form/FieldGroup';
+import FieldGroup from 'final-form-react-native/src/components/Form/FieldGroup';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {

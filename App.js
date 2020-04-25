@@ -11,8 +11,8 @@ import React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Edit from './screens/Edit';
-import View from './screens/View';
+import Edit from './src/screens/Edit';
+import View from './src/screens/View';
 
 if (__DEV__) {
   import('./support/ReactotronConfig').then(() =>

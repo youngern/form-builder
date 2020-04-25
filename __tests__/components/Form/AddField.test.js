@@ -1,5 +1,5 @@
 import React from 'react';
-import AddField from 'final-form-react-native/components/Form/AddField';
+import AddField from 'final-form-react-native/src/components/Form/AddField';
 import renderer from 'react-test-renderer';
 
 it('renders correctly with initial values', () => {
