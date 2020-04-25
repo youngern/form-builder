@@ -12,7 +12,7 @@ import { Form, Field, FormSpy } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
 import arrayMutators from 'final-form-arrays';
 
-import Config from 'final-form-react-native/services/config';
+import Config from 'final-form-react-native/src/services/config';
 import Input from './Input';
 import AddField from './AddField';
 import FieldGroup from './FieldGroup';

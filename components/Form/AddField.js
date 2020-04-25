@@ -3,7 +3,7 @@ import { SafeAreaView, StyleSheet, View, Text, Switch } from 'react-native';
 import _ from 'lodash';
 import { Form, Field } from 'react-final-form';
 
-import Config from 'final-form-react-native/services/config';
+import Config from 'final-form-react-native/src/services/config';
 import Input from './Input';
 import Error from './Error';
 import Label from './Label';

@@ -6,7 +6,7 @@ import Input from 'final-form-react-native/components/Form/Input';
 import Description from 'final-form-react-native/components/Form/Description';
 import Label from 'final-form-react-native/components/Form/Label';
 
-import Logger from 'final-form-react-native/services/Logger';
+import Logger from 'final-form-react-native/src/services/Logger';
 
 const Question = (values) => {
   const { name, placeholder } = values;

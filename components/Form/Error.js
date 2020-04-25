@@ -9,7 +9,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { useField } from 'react-final-form';
-import Config from 'final-form-react-native/services/config';
+import Config from 'final-form-react-native/src/services/config';
 
 const { Fonts } = Config;
 

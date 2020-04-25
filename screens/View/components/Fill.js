@@ -11,8 +11,8 @@ import { Form, Field } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
 import arrayMutators from 'final-form-arrays';
 
-import Config from 'final-form-react-native/services/config';
-import Logger from 'final-form-react-native/services/Logger';
+import Config from 'final-form-react-native/src/services/config';
+import Logger from 'final-form-react-native/src/services/Logger';
 import Input from 'final-form-react-native/components/Form/Input';
 import FormButton from 'final-form-react-native/components/Form/FormButton';
 

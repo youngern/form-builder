@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Fill from './components/Fill';
-import api from '../../services/api';
-import Logger from '../../services/Logger';
+import api from '../../src/services/api';
+import Logger from '../../src/services/Logger';
 
 class Edit extends Component {
   state = {};

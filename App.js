@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import Logger from './services/Logger';
+import Logger from './src/services/Logger';
 import React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
