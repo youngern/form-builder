@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "FinalFormReactNative-tvOS.app"
-               BlueprintName = "FinalFormReactNative-tvOS"
+               BlueprintIdentifier = "4B1662CB2443B767003D29F6"
+               BuildableName = "FinalFormReactNativeUITests.xctest"
+               BlueprintName = "FinalFormReactNativeUITests"
                ReferencedContainer = "container:FinalFormReactNative.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "FinalFormReactNative-tvOSTests.xctest"
-               BlueprintName = "FinalFormReactNative-tvOSTests"
+               BlueprintIdentifier = "4B1662CB2443B767003D29F6"
+               BuildableName = "FinalFormReactNativeUITests.xctest"
+               BlueprintName = "FinalFormReactNativeUITests"
                ReferencedContainer = "container:FinalFormReactNative.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -54,9 +54,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "FinalFormReactNative-tvOS.app"
-            BlueprintName = "FinalFormReactNative-tvOS"
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "FinalFormReactNative.app"
+            BlueprintName = "FinalFormReactNative"
             ReferencedContainer = "container:FinalFormReactNative.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -67,16 +67,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "FinalFormReactNative-tvOS.app"
-            BlueprintName = "FinalFormReactNative-tvOS"
-            ReferencedContainer = "container:FinalFormReactNative.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

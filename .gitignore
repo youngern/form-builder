@@ -19,7 +19,9 @@ xcuserdata
 DerivedData
 *.hmap
 *.ipa
+*.dSYM.zip
 *.xcuserstate
+*.p12
 
 # Android/IntelliJ
 #
@@ -57,3 +59,5 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+.env.*

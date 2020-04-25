@@ -38,6 +38,16 @@
                ReferencedContainer = "container:FinalFormReactNative.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4B1662CB2443B767003D29F6"
+               BuildableName = "FinalFormReactNativeUITests.xctest"
+               BlueprintName = "FinalFormReactNativeUITests"
+               ReferencedContainer = "container:FinalFormReactNative.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -8,16 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* FinalFormReactNativeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FinalFormReactNativeTests.m */; };
-		02DC61427059BA04EBBD2F98 /* libPods-FinalFormReactNative-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 841F42E0EB4B979596C304F7 /* libPods-FinalFormReactNative-tvOSTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* FinalFormReactNativeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FinalFormReactNativeTests.m */; };
-		8CEA3F32543B30CED8DF45E5 /* libPods-FinalFormReactNative-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 118F8F98D03EBB35B8A47A94 /* libPods-FinalFormReactNative-tvOS.a */; };
+		4B1662CF2443B767003D29F6 /* FinalFormReactNativeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1662CE2443B767003D29F6 /* FinalFormReactNativeUITests.swift */; };
+		4B1662D72443C3C5003D29F6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1662D62443C3C5003D29F6 /* SnapshotHelper.swift */; };
 		A52DC45A68FF8077E17E8427 /* libPods-FinalFormReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB6DC97D42812B7664F599F /* libPods-FinalFormReactNative.a */; };
 		BB0A99E6C9CAF05F85FBBC2F /* libPods-FinalFormReactNative-FinalFormReactNativeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8C1F26FA1EBFD46F92C73E /* libPods-FinalFormReactNative-FinalFormReactNativeTests.a */; };
 /* End PBXBuildFile section */
@@ -30,12 +26,12 @@
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = FinalFormReactNative;
 		};
-		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
+		4B1662D12443B767003D29F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "FinalFormReactNative-tvOS";
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = FinalFormReactNative;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -44,8 +40,6 @@
 		00E356EE1AD99517003FC87E /* FinalFormReactNativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalFormReactNativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* FinalFormReactNativeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinalFormReactNativeTests.m; sourceTree = "<group>"; };
-		0D691604611606EEBD4D5067 /* Pods-FinalFormReactNative-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative-tvOS.release.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative-tvOS/Pods-FinalFormReactNative-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		118F8F98D03EBB35B8A47A94 /* libPods-FinalFormReactNative-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinalFormReactNative-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* FinalFormReactNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalFormReactNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = FinalFormReactNative/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = FinalFormReactNative/AppDelegate.m; sourceTree = "<group>"; };
@@ -53,17 +47,16 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FinalFormReactNative/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FinalFormReactNative/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FinalFormReactNative/main.m; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* FinalFormReactNative-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FinalFormReactNative-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* FinalFormReactNative-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FinalFormReactNative-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		343A757F8193F69B13E33F38 /* Pods-FinalFormReactNative-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative-tvOSTests/Pods-FinalFormReactNative-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3CE3B2F64CCC9DC5F36767E1 /* Pods-FinalFormReactNative-FinalFormReactNativeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative-FinalFormReactNativeTests.debug.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative-FinalFormReactNativeTests/Pods-FinalFormReactNative-FinalFormReactNativeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FB6DC97D42812B7664F599F /* libPods-FinalFormReactNative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinalFormReactNative.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468A5C252FF0FE0150E21273 /* Pods-FinalFormReactNative-FinalFormReactNativeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative-FinalFormReactNativeTests.release.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative-FinalFormReactNativeTests/Pods-FinalFormReactNative-FinalFormReactNativeTests.release.xcconfig"; sourceTree = "<group>"; };
+		4B1662CC2443B767003D29F6 /* FinalFormReactNativeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalFormReactNativeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B1662CE2443B767003D29F6 /* FinalFormReactNativeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalFormReactNativeUITests.swift; sourceTree = "<group>"; };
+		4B1662D02443B767003D29F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B1662D62443C3C5003D29F6 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		4BA57FDA24417B9100EA310C /* FinalFormReactNative.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = FinalFormReactNative.entitlements; path = FinalFormReactNative/FinalFormReactNative.entitlements; sourceTree = "<group>"; };
 		5A8C1F26FA1EBFD46F92C73E /* libPods-FinalFormReactNative-FinalFormReactNativeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinalFormReactNative-FinalFormReactNativeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63898972E819528F813483B8 /* Pods-FinalFormReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative.release.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative/Pods-FinalFormReactNative.release.xcconfig"; sourceTree = "<group>"; };
-		64DFC5510547F5AE0C254929 /* Pods-FinalFormReactNative-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative-tvOSTests/Pods-FinalFormReactNative-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		841F42E0EB4B979596C304F7 /* libPods-FinalFormReactNative-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinalFormReactNative-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D4AB070DBF5D063E448AC23 /* Pods-FinalFormReactNative-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative-tvOS/Pods-FinalFormReactNative-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B25F3E174ECF42C8AC860742 /* Pods-FinalFormReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalFormReactNative.debug.xcconfig"; path = "Target Support Files/Pods-FinalFormReactNative/Pods-FinalFormReactNative.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -86,19 +79,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D02E4781E0B4A5D006451C7 /* Frameworks */ = {
+		4B1662C92443B767003D29F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CEA3F32543B30CED8DF45E5 /* libPods-FinalFormReactNative-tvOS.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2D02E48D1E0B4A5D006451C7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				02DC61427059BA04EBBD2F98 /* libPods-FinalFormReactNative-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +109,7 @@
 		13B07FAE1A68108700A75B9A /* FinalFormReactNative */ = {
 			isa = PBXGroup;
 			children = (
+				4BA57FDA24417B9100EA310C /* FinalFormReactNative.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -143,10 +128,18 @@
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				3FB6DC97D42812B7664F599F /* libPods-FinalFormReactNative.a */,
 				5A8C1F26FA1EBFD46F92C73E /* libPods-FinalFormReactNative-FinalFormReactNativeTests.a */,
-				118F8F98D03EBB35B8A47A94 /* libPods-FinalFormReactNative-tvOS.a */,
-				841F42E0EB4B979596C304F7 /* libPods-FinalFormReactNative-tvOSTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B1662CD2443B767003D29F6 /* FinalFormReactNativeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4B1662D62443C3C5003D29F6 /* SnapshotHelper.swift */,
+				4B1662CE2443B767003D29F6 /* FinalFormReactNativeUITests.swift */,
+				4B1662D02443B767003D29F6 /* Info.plist */,
+			);
+			path = FinalFormReactNativeUITests;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -162,6 +155,7 @@
 				13B07FAE1A68108700A75B9A /* FinalFormReactNative */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* FinalFormReactNativeTests */,
+				4B1662CD2443B767003D29F6 /* FinalFormReactNativeUITests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BDA9200F8F1B541E42D09C97 /* Pods */,
@@ -176,8 +170,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* FinalFormReactNative.app */,
 				00E356EE1AD99517003FC87E /* FinalFormReactNativeTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* FinalFormReactNative-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* FinalFormReactNative-tvOSTests.xctest */,
+				4B1662CC2443B767003D29F6 /* FinalFormReactNativeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,10 +182,6 @@
 				63898972E819528F813483B8 /* Pods-FinalFormReactNative.release.xcconfig */,
 				3CE3B2F64CCC9DC5F36767E1 /* Pods-FinalFormReactNative-FinalFormReactNativeTests.debug.xcconfig */,
 				468A5C252FF0FE0150E21273 /* Pods-FinalFormReactNative-FinalFormReactNativeTests.release.xcconfig */,
-				9D4AB070DBF5D063E448AC23 /* Pods-FinalFormReactNative-tvOS.debug.xcconfig */,
-				0D691604611606EEBD4D5067 /* Pods-FinalFormReactNative-tvOS.release.xcconfig */,
-				343A757F8193F69B13E33F38 /* Pods-FinalFormReactNative-tvOSTests.debug.xcconfig */,
-				64DFC5510547F5AE0C254929 /* Pods-FinalFormReactNative-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -241,44 +230,23 @@
 			productReference = 13B07F961A680F5B00A75B9A /* FinalFormReactNative.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* FinalFormReactNative-tvOS */ = {
+		4B1662CB2443B767003D29F6 /* FinalFormReactNativeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FinalFormReactNative-tvOS" */;
+			buildConfigurationList = 4B1662D32443B767003D29F6 /* Build configuration list for PBXNativeTarget "FinalFormReactNativeUITests" */;
 			buildPhases = (
-				FDDADB457655066E98EDD708 /* [CP] Check Pods Manifest.lock */,
-				FD10A7F122414F3F0027D42C /* Start Packager */,
-				2D02E4771E0B4A5D006451C7 /* Sources */,
-				2D02E4781E0B4A5D006451C7 /* Frameworks */,
-				2D02E4791E0B4A5D006451C7 /* Resources */,
-				2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */,
+				4B1662C82443B767003D29F6 /* Sources */,
+				4B1662C92443B767003D29F6 /* Frameworks */,
+				4B1662CA2443B767003D29F6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4B1662D22443B767003D29F6 /* PBXTargetDependency */,
 			);
-			name = "FinalFormReactNative-tvOS";
-			productName = "FinalFormReactNative-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* FinalFormReactNative-tvOS.app */;
-			productType = "com.apple.product-type.application";
-		};
-		2D02E48F1E0B4A5D006451C7 /* FinalFormReactNative-tvOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FinalFormReactNative-tvOSTests" */;
-			buildPhases = (
-				856518BD3F2155296426418B /* [CP] Check Pods Manifest.lock */,
-				2D02E48C1E0B4A5D006451C7 /* Sources */,
-				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
-				2D02E48E1E0B4A5D006451C7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
-			);
-			name = "FinalFormReactNative-tvOSTests";
-			productName = "FinalFormReactNative-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* FinalFormReactNative-tvOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = FinalFormReactNativeUITests;
+			productName = FinalFormReactNativeUITests;
+			productReference = 4B1662CC2443B767003D29F6 /* FinalFormReactNativeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -286,23 +254,24 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = QBR79ABEUK;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = QBR79ABEUK;
 						LastSwiftMigration = 1120;
+						ProvisioningStyle = Manual;
 					};
-					2D02E47A1E0B4A5D006451C7 = {
-						CreatedOnToolsVersion = 8.2.1;
+					4B1662CB2443B767003D29F6 = {
+						CreatedOnToolsVersion = 11.3;
+						DevelopmentTeam = QBR79ABEUK;
 						ProvisioningStyle = Automatic;
-					};
-					2D02E48F1E0B4A5D006451C7 = {
-						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 2D02E47A1E0B4A5D006451C7;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 				};
 			};
@@ -321,8 +290,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* FinalFormReactNative */,
 				00E356ED1AD99517003FC87E /* FinalFormReactNativeTests */,
-				2D02E47A1E0B4A5D006451C7 /* FinalFormReactNative-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* FinalFormReactNative-tvOSTests */,
+				4B1662CB2443B767003D29F6 /* FinalFormReactNativeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -344,15 +312,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D02E4791E0B4A5D006451C7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2D02E48E1E0B4A5D006451C7 /* Resources */ = {
+		4B1662CA2443B767003D29F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -374,21 +334,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		5283343AD48E6B0EC24467C4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -436,28 +382,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinalFormReactNative/Pods-FinalFormReactNative-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		856518BD3F2155296426418B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FinalFormReactNative-tvOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		91CE13B3BF76BB62C280D697 /* [CP] Check Pods Manifest.lock */ = {
@@ -571,47 +495,6 @@
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		FD10A7F122414F3F0027D42C /* Start Packager */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Start Packager";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FDDADB457655066E98EDD708 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FinalFormReactNative-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -632,20 +515,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D02E4771E0B4A5D006451C7 /* Sources */ = {
+		4B1662C82443B767003D29F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
-				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2D02E48C1E0B4A5D006451C7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2DCD954D1E0B4F2C00145EB5 /* FinalFormReactNativeTests.m in Sources */,
+				4B1662CF2443B767003D29F6 /* FinalFormReactNativeUITests.swift in Sources */,
+				4B1662D72443C3C5003D29F6 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,10 +532,10 @@
 			target = 13B07F861A680F5B00A75B9A /* FinalFormReactNative */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
-		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
+		4B1662D22443B767003D29F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* FinalFormReactNative-tvOS */;
-			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+			target = 13B07F861A680F5B00A75B9A /* FinalFormReactNative */;
+			targetProxy = 4B1662D12443B767003D29F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -682,6 +557,8 @@
 			baseConfigurationReference = 3CE3B2F64CCC9DC5F36767E1 /* Pods-FinalFormReactNative-FinalFormReactNativeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				DEVELOPMENT_TEAM = QBR79ABEUK;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -694,7 +571,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.youngern.playground.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinalFormReactNative.app/FinalFormReactNative";
 			};
@@ -705,7 +582,9 @@
 			baseConfigurationReference = 468A5C252FF0FE0150E21273 /* Pods-FinalFormReactNative-FinalFormReactNativeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = QBR79ABEUK;
 				INFOPLIST_FILE = FinalFormReactNativeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -714,7 +593,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.youngern.playground.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinalFormReactNative.app/FinalFormReactNative";
 			};
@@ -726,7 +605,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_ENTITLEMENTS = FinalFormReactNative/FinalFormReactNative.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = QBR79ABEUK;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -739,8 +622,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.youngern.playground.FinalFormReactNative;
 				PRODUCT_NAME = FinalFormReactNative;
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.youngern.playground.FinalFormReactNative";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -753,7 +637,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_ENTITLEMENTS = FinalFormReactNative/FinalFormReactNative.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = QBR79ABEUK;
 				INFOPLIST_FILE = FinalFormReactNative/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -761,120 +649,66 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.youngern.playground.FinalFormReactNative;
 				PRODUCT_NAME = FinalFormReactNative;
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.youngern.playground.FinalFormReactNative";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
-		2D02E4971E0B4A5E006451C7 /* Debug */ = {
+		4B1662D42443B767003D29F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D4AB070DBF5D063E448AC23 /* Pods-FinalFormReactNative-tvOS.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "FinalFormReactNative-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.FinalFormReactNative-tvOS";
+				DEVELOPMENT_TEAM = QBR79ABEUK;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FinalFormReactNativeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youngern.playground.FinalFormReactNativeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FinalFormReactNative;
 			};
 			name = Debug;
 		};
-		2D02E4981E0B4A5E006451C7 /* Release */ = {
+		4B1662D52443B767003D29F6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D691604611606EEBD4D5067 /* Pods-FinalFormReactNative-tvOS.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "FinalFormReactNative-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.FinalFormReactNative-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-			};
-			name = Release;
-		};
-		2D02E4991E0B4A5E006451C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 343A757F8193F69B13E33F38 /* Pods-FinalFormReactNative-tvOSTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "FinalFormReactNative-tvOSTests/Info.plist";
+				DEVELOPMENT_TEAM = QBR79ABEUK;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FinalFormReactNativeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.FinalFormReactNative-tvOSTests";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youngern.playground.FinalFormReactNativeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinalFormReactNative-tvOS.app/FinalFormReactNative-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 10.1;
-			};
-			name = Debug;
-		};
-		2D02E49A1E0B4A5E006451C7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64DFC5510547F5AE0C254929 /* Pods-FinalFormReactNative-tvOSTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "FinalFormReactNative-tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.FinalFormReactNative-tvOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinalFormReactNative-tvOS.app/FinalFormReactNative-tvOS";
-				TVOS_DEPLOYMENT_TARGET = 10.1;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FinalFormReactNative;
 			};
 			name = Release;
 		};
@@ -906,6 +740,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -966,6 +801,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1012,20 +848,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FinalFormReactNative-tvOS" */ = {
+		4B1662D32443B767003D29F6 /* Build configuration list for PBXNativeTarget "FinalFormReactNativeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D02E4971E0B4A5E006451C7 /* Debug */,
-				2D02E4981E0B4A5E006451C7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FinalFormReactNative-tvOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2D02E4991E0B4A5E006451C7 /* Debug */,
-				2D02E49A1E0B4A5E006451C7 /* Release */,
+				4B1662D42443B767003D29F6 /* Debug */,
+				4B1662D52443B767003D29F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

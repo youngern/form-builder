@@ -70,12 +70,3 @@ target 'FinalFormReactNative' do
     flipper_post_install(installer)
   end
 end
-
-target 'FinalFormReactNative-tvOS' do
-  # Pods for FinalFormReactNative-tvOS
-
-  target 'FinalFormReactNative-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-end

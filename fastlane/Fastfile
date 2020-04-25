@@ -1,0 +1,91 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+setup_travis
+
+default_platform(:ios)
+
+before_all do
+  # ensure_git_branch(branch: 'fastlane')
+  # ensure_git_status_clean
+  # git_pull
+end
+
+# platform :android do
+#   desc 'Build the Android application.'
+#   private_lane :build do
+#     gradle(task: 'clean', project_dir: 'android/')
+#     gradle(task: 'assemble', build_type: 'Release', project_dir: 'android/')
+#   end
+# end
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :prepare do
+    # add actions here: https://docs.fastlane.tools/actions
+    appicon(
+      appicon_image_file: './Assets/Deploy/AppIcon.png',
+      appicon_devices: [:ipad, :iphone, :ios_marketing]
+    )
+  end
+
+  lane :screenshots do
+    snapshot
+  end
+
+  lane :certificates do
+    match
+  end
+
+  desc 'Ship to Testflight.'
+  lane :ci do
+    sync_code_signing(readonly: true)
+    increment_build_number(xcodeproj: "./ios/FinalFormReactNative.xcodeproj")
+    cocoapods(podfile: './ios/Podfile')
+    build_app(
+      scheme: 'FinalFormReactNative',
+      workspace: './ios/FinalFormReactNative.xcworkspace',
+      silent: true,
+      suppress_xcode_output: true
+    )
+
+    # upload_to_testflight(
+    #   username: 'ysong028@gmail.com',
+    #   team_id: '119158022',
+    #   app_identifier: 'com.youngern.playground.FinalFormReactNative',
+    #   skip_waiting_for_build_processing: true
+    # )
+  end
+
+  desc 'Ship to Testflight.'
+  lane :beta do
+    sync_code_signing
+    increment_build_number(xcodeproj: "./ios/FinalFormReactNative.xcodeproj")
+    cocoapods(podfile: './ios/Podfile')
+    build_app(
+      scheme: 'FinalFormReactNative',
+      workspace: './ios/FinalFormReactNative.xcworkspace',
+      silent: true,
+      suppress_xcode_output: true
+    )
+
+    # upload_to_testflight(
+    #   username: 'ysong028@gmail.com',
+    #   team_id: '119158022',
+    #   app_identifier: 'com.youngern.playground.FinalFormReactNative',
+    #   skip_waiting_for_build_processing: true
+    # )
+  end
+end
