@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
-import Config from 'final-form-react-native/src/services/config';
+import Config from '~/src/services/config';
 const { Fonts } = Config;
 const Description = ({ value }) => {
   return <Text style={styles.description}>{value.trim()}</Text>;

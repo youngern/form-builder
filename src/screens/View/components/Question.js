@@ -2,11 +2,11 @@ import React from 'react';
 import _ from 'lodash';
 import { Field } from 'react-final-form';
 
-import Input from 'final-form-react-native/src/components/Form/Input';
-import Description from 'final-form-react-native/src/components/Form/Description';
-import Label from 'final-form-react-native/src/components/Form/Label';
+import Input from '~/src/components/Form/Input';
+import Description from '~/src/components/Form/Description';
+import Label from '~/src/components/Form/Label';
 
-import Logger from 'final-form-react-native/src/services/Logger';
+import Logger from '~/src/services/Logger';
 
 const Question = (values) => {
   const { name, placeholder } = values;

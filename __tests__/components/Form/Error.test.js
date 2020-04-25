@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form } from 'react-final-form';
-import Error from 'final-form-react-native/src/components/Form/Error';
+import Error from '~/src/components/Form/Error';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {

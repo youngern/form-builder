@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
-import Config from 'final-form-react-native/src/services/config';
+import Config from '~/src/services/config';
 
 const { Fonts } = Config;
 

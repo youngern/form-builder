@@ -11,10 +11,10 @@ import { Form, Field } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
 import arrayMutators from 'final-form-arrays';
 
-import Config from 'final-form-react-native/src/services/config';
-import Logger from 'final-form-react-native/src/services/Logger';
-import Input from 'final-form-react-native/src/components/Form/Input';
-import FormButton from 'final-form-react-native/src/components/Form/FormButton';
+import Config from '~/src/services/config';
+import Logger from '~/src/services/Logger';
+import Input from '~/src/components/Form/Input';
+import FormButton from '~/src/components/Form/FormButton';
 
 import Question from './Question';
 

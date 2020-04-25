@@ -1,5 +1,5 @@
 import React from 'react';
-import Description from 'final-form-react-native/src/components/Form/Description';
+import Description from '~/src/components/Form/Description';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
