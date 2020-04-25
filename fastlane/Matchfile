@@ -1,6 +1,4 @@
-git_url("https://github.com/youngern/certificates.git")
-
-storage_mode("git")
+storage_mode("s3")
 
 type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
 
