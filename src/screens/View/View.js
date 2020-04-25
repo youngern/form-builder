@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import Fill from './components/Fill';
-import api from '../../services/api';
-import Logger from '../../services/Logger';
+import api from '~/src/services/api';
+import Logger from '~/src/services/Logger';
 
 class Edit extends Component {
   state = {};
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.fetch();
+  }
+
+  fetch = async () => {
     this.setState({ loading: true });
     const fields = await api.get();
-
-    Logger.log('get fields', fields);
+    Logger.log('get fields: view', fields);
     this.setState({ loading: false, fields });
-  }
+  };
 
   setValues = async (values) => {
     this.setState({ loading: true, fields: values });

@@ -4,9 +4,7 @@ import _ from 'lodash';
 import Config from '~/src/services/config';
 const { Fonts } = Config;
 
-const Label = ({ value }) => (
-  <Text style={styles.label}>{_.upperCase(value)}</Text>
-);
+const Label = ({ value }) => <Text style={styles.label}>{value}</Text>;
 
 const styles = StyleSheet.create({
   label: {

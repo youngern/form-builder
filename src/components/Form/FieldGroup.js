@@ -9,7 +9,7 @@ const FieldGroup = ({ name, placeholder }) => {
   return (
     <>
       <Field
-        name={`${name}.name`}
+        name={`${name}.label`}
         subscription={{
           value: true,
           active: true,

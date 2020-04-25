@@ -5,9 +5,10 @@ import {
   ScrollView,
   View,
   StatusBar,
+  Text,
 } from 'react-native';
 import _ from 'lodash';
-import { Form, Field } from 'react-final-form';
+import { Form, Field, FormSpy } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
 import arrayMutators from 'final-form-arrays';
 
@@ -23,21 +24,16 @@ const required = (value) => (value ? undefined : 'required');
 
 const Buildable = (props) => {
   const { fields = {} } = props;
-  const [inputs, setInputs] = useState(fields);
-
   const onSubmit = (values) => {
     Logger.log('save', values);
   };
 
-  useEffect(() => {
-    setInputs(fields || {});
-  }, [fields]);
+  Logger.log('fields', fields);
 
   return (
     <>
       <Form
         onSubmit={onSubmit}
-        subscription={{ submitting: true, values: true }}
         mutators={{
           ...arrayMutators,
         }}>
@@ -56,7 +52,7 @@ const Buildable = (props) => {
                   name="form_name"
                   placeholder="Form Name"
                   validate={required}
-                  initialValue={inputs.form_name}>
+                  initialValue={fields.form_name}>
                   {({ input, meta, ...rest }) => {
                     const error = (meta.touched && meta.error) || undefined;
 
@@ -83,8 +79,7 @@ const Buildable = (props) => {
                     error: true,
                   }}
                   name="form_description"
-                  placeholder="Enter a description for your form..."
-                  initialValue={inputs.form_description}>
+                  initialValue={fields.form_description}>
                   {({ input, meta, ...rest }) => {
                     const error = (meta.touched && meta.error) || undefined;
 
@@ -109,7 +104,7 @@ const Buildable = (props) => {
                 contentInsetAdjustmentBehavior="automatic"
                 style={[styles.container, { paddingTop: 10 }]}>
                 <SafeAreaView>
-                  <FieldArray name="fields" initialValue={inputs.fields}>
+                  <FieldArray name="fields" initialValue={fields.fields}>
                     {({ fields }) =>
                       fields.map((name) => (
                         <View style={styles.section} key={name}>
@@ -122,6 +117,9 @@ const Buildable = (props) => {
                     }
                   </FieldArray>
                 </SafeAreaView>
+                <FormSpy subscription={{ values: true }}>
+                  {({ values }) => <Text>{JSON.stringify(values, 0, 2)}</Text>}
+                </FormSpy>
               </ScrollView>
               <View style={styles.footer}>
                 <FormButton

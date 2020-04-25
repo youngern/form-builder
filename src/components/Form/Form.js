@@ -6,6 +6,7 @@ import {
   View,
   StatusBar,
   TouchableOpacity,
+  Text,
 } from 'react-native';
 import _ from 'lodash';
 import { Form, Field, FormSpy } from 'react-final-form';
@@ -13,6 +14,7 @@ import { FieldArray } from 'react-final-form-arrays';
 import arrayMutators from 'final-form-arrays';
 
 import Config from '~/src/services/config';
+import Logger from '~/src/services/Logger';
 import Input from './Input';
 import AddField from './AddField';
 import FieldGroup from './FieldGroup';
@@ -36,7 +38,6 @@ const Buildable = (props) => {
     <>
       <Form
         onSubmit={onSubmit}
-        subscription={{ submitting: true, values: true }}
         mutators={{
           ...arrayMutators,
         }}>
@@ -106,8 +107,9 @@ const Buildable = (props) => {
                 style={[styles.container, { paddingTop: 10 }]}>
                 <SafeAreaView>
                   <FieldArray name="fields" initialValue={inputs.fields}>
-                    {({ fields }) =>
-                      fields.map((name, index) => (
+                    {({ fields }) => {
+                      Logger.log('rerender', fields);
+                      return fields.map((name, index) => (
                         <TouchableOpacity
                           key={name}
                           onPress={() => {
@@ -124,10 +126,13 @@ const Buildable = (props) => {
                             placeholder={_.get(values, `${name}.placeholder`)}
                           />
                         </TouchableOpacity>
-                      ))
-                    }
+                      ));
+                    }}
                   </FieldArray>
                 </SafeAreaView>
+                <FormSpy subscription={{ values: true }}>
+                  {({ values }) => <Text>{JSON.stringify(values, 0, 2)}</Text>}
+                </FormSpy>
               </ScrollView>
               <FormButton
                 accessible

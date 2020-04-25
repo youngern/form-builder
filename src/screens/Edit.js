@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Form from '../components/Form';
-import api from '../services/api';
-import Logger from '../services/Logger';
+import Form from '~/src/components/Form';
+import api from '~/src/services/api';
+import Logger from '~/src/services/Logger';
 
 class Edit extends Component {
   state = {};
@@ -9,8 +9,6 @@ class Edit extends Component {
   async componentDidMount() {
     this.setState({ loading: true });
     const fields = await api.get();
-
-    Logger.log('get fields', fields);
     this.setState({ loading: false, fields });
   }
 

@@ -14,7 +14,9 @@ const Question = (values) => {
   Logger.log('values', values);
   return (
     <>
-      <Field name={`${name}.name`}>{({ input }) => <Label {...input} />}</Field>
+      <Field name={`${name}.label`}>
+        {({ input }) => <Label {...input} />}
+      </Field>
       <Field name={`${name}.description`}>
         {({ input }) => <Description {...input} />}
       </Field>
