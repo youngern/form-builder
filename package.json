@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint .",
     "reactotron": "open -a Reactotron",
-    "setup": "aws-vault exec cerbot -- chamber export youngern/final_form/s3 --format dotenv --output-file .env.default"
+    "setup": "bash bin/setup"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.9.0",
