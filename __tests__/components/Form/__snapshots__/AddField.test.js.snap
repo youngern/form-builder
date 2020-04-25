@@ -40,13 +40,13 @@ exports[`renders correctly with initial values 1`] = `
           }
         }
       >
-        NAME
+        LABEL
       </Text>
       <TextInput
         allowFontScaling={true}
         onBlur={[Function]}
         onChange={[Function]}
-        placeholder="Name"
+        placeholder="Lame"
         rejectResponderTermination={true}
         style={
           Array [
@@ -383,13 +383,13 @@ exports[`renders correctly without initial values 1`] = `
           }
         }
       >
-        NAME
+        LABEL
       </Text>
       <TextInput
         allowFontScaling={true}
         onBlur={[Function]}
         onChange={[Function]}
-        placeholder="Name"
+        placeholder="Lame"
         rejectResponderTermination={true}
         style={
           Array [
