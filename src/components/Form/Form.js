@@ -6,18 +6,41 @@ import {
   View,
   StatusBar,
   TouchableOpacity,
+  Text,
 } from 'react-native';
+import { gql, useMutation } from '@apollo/client';
 import _ from 'lodash';
 import { Form, Field, FormSpy } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
 import arrayMutators from 'final-form-arrays';
 
 import Config from '~/src/services/config';
+import Logger from '~/src/services/Logger';
 import Input from './Input';
 import AddField from './AddField';
 import FieldGroup from './FieldGroup';
 import FormButton from './FormButton';
 import Modal from '../Modal';
+
+const ADD_FIELD = gql`
+  mutation createField($field: field_insert_input!) {
+    insert_field(objects: [$field]) {
+      returning {
+        id
+      }
+    }
+  }
+`;
+
+const UPDATE_FIELD = gql`
+  mutation updateField($id: uuid!, $field: field_set_input!) {
+    update_field(_set: $field, where: { id: { _eq: $id } }) {
+      returning {
+        id
+      }
+    }
+  }
+`;
 
 const { Colors } = Config;
 const required = (value) => (value ? undefined : 'required');
@@ -26,6 +49,9 @@ const Buildable = (props) => {
   const { fields = {}, onSubmit } = props;
   const [inputs, setInputs] = useState(fields);
   const [fieldValues, setFieldValues] = useState(undefined);
+
+  const [addField, { data }] = useMutation(ADD_FIELD);
+  const [updateField] = useMutation(UPDATE_FIELD);
 
   useEffect(() => {
     setInputs(fields || {});
@@ -36,7 +62,6 @@ const Buildable = (props) => {
     <>
       <Form
         onSubmit={onSubmit}
-        subscription={{ submitting: true, values: true }}
         mutators={{
           ...arrayMutators,
         }}>
@@ -52,10 +77,10 @@ const Buildable = (props) => {
                     touched: true,
                     error: true,
                   }}
-                  name="form_name"
+                  name="name"
                   placeholder="Form Name"
                   validate={required}
-                  initialValue={inputs.form_name}>
+                  initialValue={inputs.name}>
                   {({ input, meta, ...rest }) => {
                     const error = (meta.touched && meta.error) || undefined;
 
@@ -80,9 +105,9 @@ const Buildable = (props) => {
                     touched: true,
                     error: true,
                   }}
-                  name="form_description"
+                  name="description"
                   placeholder="Enter a description for your form..."
-                  initialValue={inputs.form_description}>
+                  initialValue={inputs.description}>
                   {({ input, meta, ...rest }) => {
                     const error = (meta.touched && meta.error) || undefined;
 
@@ -106,8 +131,8 @@ const Buildable = (props) => {
                 style={[styles.container, { paddingTop: 10 }]}>
                 <SafeAreaView>
                   <FieldArray name="fields" initialValue={inputs.fields}>
-                    {({ fields }) =>
-                      fields.map((name, index) => (
+                    {({ fields }) => {
+                      return fields.map((name, index) => (
                         <TouchableOpacity
                           key={name}
                           onPress={() => {
@@ -124,10 +149,13 @@ const Buildable = (props) => {
                             placeholder={_.get(values, `${name}.placeholder`)}
                           />
                         </TouchableOpacity>
-                      ))
-                    }
+                      ));
+                    }}
                   </FieldArray>
                 </SafeAreaView>
+                <FormSpy subscription={{ values: true }}>
+                  {({ values }) => <Text>{JSON.stringify(values, 0, 2)}</Text>}
+                </FormSpy>
               </ScrollView>
               <FormButton
                 accessible
@@ -163,12 +191,27 @@ const Buildable = (props) => {
                     type: 'input',
                     label,
                     name: _.snakeCase(label),
+                    formId: '82d38f92-14a5-4107-b7f3-a0374b3eaf42',
                     ...rest,
                   };
 
                   if (isPersisted) {
+                    updateField({
+                      variables: {
+                        id: fieldParams.id,
+                        field: {
+                          type: fieldParams.type,
+                          label: fieldParams.label,
+                          name: fieldParams.name,
+                          required: fieldParams.required,
+                          description: fieldParams.description,
+                          formId: fieldParams.formId,
+                        },
+                      },
+                    });
                     form.mutators.update('fields', fieldIndex, fieldParams);
                   } else {
+                    addField({ variables: { field: fieldParams } });
                     form.mutators.push('fields', fieldParams);
                   }
 

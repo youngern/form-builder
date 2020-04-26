@@ -34,8 +34,7 @@ const SwitchInput = React.forwardRef((props, ref) => {
 
 const required = (value) => (value ? undefined : 'required');
 const App = (props) => {
-  const { onAdd, values = undefined } = props;
-
+  const { values = undefined, onAdd } = props;
   return (
     <Form onSubmit={onAdd} initialValues={values}>
       {({ handleSubmit }) => (
@@ -43,7 +42,7 @@ const App = (props) => {
           <View>
             <Text style={styles.fieldHeader}>Add Field</Text>
             <View style={styles.section}>
-              <Label value="label" />
+              <Label value="Label" />
               <Field
                 subscription={{
                   value: true,
@@ -52,7 +51,7 @@ const App = (props) => {
                   error: true,
                 }}
                 name="label"
-                placeholder="Lame"
+                placeholder="Label"
                 validate={required}>
                 {({ input, meta, ...rest }) => {
                   const error = (meta.touched && meta.error) || undefined;
@@ -63,7 +62,7 @@ const App = (props) => {
               <Error name="label" />
             </View>
             <View style={styles.section}>
-              <Label value="description" />
+              <Label value="Description" />
               <Field
                 subscription={{
                   value: true,
@@ -82,7 +81,7 @@ const App = (props) => {
             </View>
             <Error name="description" />
             <View style={styles.section}>
-              <Label value="placeholder" />
+              <Label value="Placeholder" />
               <Field
                 subscription={{
                   value: true,
@@ -101,7 +100,7 @@ const App = (props) => {
               <Error name="placeholder" />
             </View>
             <View style={styles.section}>
-              <Label value="initialValue" />
+              <Label value="Initial Value" />
               <Field
                 subscription={{
                   value: true,
@@ -120,7 +119,7 @@ const App = (props) => {
               <Error name="initialValue" />
             </View>
             <View style={styles.section}>
-              <Label value="required" />
+              <Label value="Required" />
               <Field
                 subscription={{
                   value: true,

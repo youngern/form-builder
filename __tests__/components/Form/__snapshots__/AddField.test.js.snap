@@ -40,13 +40,13 @@ exports[`renders correctly with initial values 1`] = `
           }
         }
       >
-        LABEL
+        Label
       </Text>
       <TextInput
         allowFontScaling={true}
         onBlur={[Function]}
         onChange={[Function]}
-        placeholder="Lame"
+        placeholder="Label"
         rejectResponderTermination={true}
         style={
           Array [
@@ -93,7 +93,7 @@ exports[`renders correctly with initial values 1`] = `
           }
         }
       >
-        DESCRIPTION
+        Description
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -146,7 +146,7 @@ exports[`renders correctly with initial values 1`] = `
           }
         }
       >
-        PLACEHOLDER
+        Placeholder
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -199,7 +199,7 @@ exports[`renders correctly with initial values 1`] = `
           }
         }
       >
-        INITIAL VALUE
+        Initial Value
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -252,7 +252,7 @@ exports[`renders correctly with initial values 1`] = `
           }
         }
       >
-        REQUIRED
+        Required
       </Text>
       <View
         style={
@@ -383,13 +383,13 @@ exports[`renders correctly without initial values 1`] = `
           }
         }
       >
-        LABEL
+        Label
       </Text>
       <TextInput
         allowFontScaling={true}
         onBlur={[Function]}
         onChange={[Function]}
-        placeholder="Lame"
+        placeholder="Label"
         rejectResponderTermination={true}
         style={
           Array [
@@ -436,7 +436,7 @@ exports[`renders correctly without initial values 1`] = `
           }
         }
       >
-        DESCRIPTION
+        Description
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -489,7 +489,7 @@ exports[`renders correctly without initial values 1`] = `
           }
         }
       >
-        PLACEHOLDER
+        Placeholder
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -542,7 +542,7 @@ exports[`renders correctly without initial values 1`] = `
           }
         }
       >
-        INITIAL VALUE
+        Initial Value
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -595,7 +595,7 @@ exports[`renders correctly without initial values 1`] = `
           }
         }
       >
-        REQUIRED
+        Required
       </Text>
       <View
         style={

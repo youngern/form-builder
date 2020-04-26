@@ -1,31 +1,39 @@
-import React, { Component } from 'react';
-import Form from '../components/Form';
-import api from '../services/api';
-import Logger from '../services/Logger';
+import React from 'react';
+import { Text } from 'react-native';
+import { useQuery, gql } from '@apollo/client';
+import Form from '~/src/components/Form';
 
-class Edit extends Component {
-  state = {};
-
-  async componentDidMount() {
-    this.setState({ loading: true });
-    const fields = await api.get();
-
-    Logger.log('get fields', fields);
-    this.setState({ loading: false, fields });
+const PROFILE = gql`
+  query forms {
+    forms: form {
+      id
+      name
+      description
+      fields {
+        type
+        label
+        name
+        required
+        description
+        id
+      }
+    }
   }
+`;
 
-  setValues = async (values) => {
-    this.setState({ loading: true, fields: values });
-    await api.set(values);
+function Edit() {
+  const { loading, error, data } = useQuery(PROFILE);
+  const setValues = async (values) => {
+    // this.setState({ loading: true, fields: values });
+    // await api.set(values);
     Logger.log('set values', values);
-    this.setState({ loading: false });
+    // this.setState({ loading: false });
   };
 
-  render() {
-    const { fields = [] } = this.state;
+  if (loading) return <Text>Loading...</Text>;
+  if (error) return <Text>Error :(</Text>;
 
-    return <Form fields={fields} onSubmit={this.setValues} />;
-  }
+  return <Form fields={data.forms[0]} onSubmit={setValues} />;
 }
 
 export default Edit;

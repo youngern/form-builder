@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 aws-vault exec cerbot -- \
-  chamber export "youngern/final_form/s3" \
+  chamber export "final-form-react-native" \
    --format "dotenv" \
    --output-file ".env.default"
