@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
+import { gql, useMutation } from '@apollo/client';
 import _ from 'lodash';
 import { Form, Field, FormSpy } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
@@ -21,6 +22,26 @@ import FieldGroup from './FieldGroup';
 import FormButton from './FormButton';
 import Modal from '../Modal';
 
+const ADD_FIELD = gql`
+  mutation createField($field: field_insert_input!) {
+    insert_field(objects: [$field]) {
+      returning {
+        id
+      }
+    }
+  }
+`;
+
+const UPDATE_FIELD = gql`
+  mutation updateField($id: uuid!, $field: field_set_input!) {
+    update_field(_set: $field, where: { id: { _eq: $id } }) {
+      returning {
+        id
+      }
+    }
+  }
+`;
+
 const { Colors } = Config;
 const required = (value) => (value ? undefined : 'required');
 
@@ -28,6 +49,9 @@ const Buildable = (props) => {
   const { fields = {}, onSubmit } = props;
   const [inputs, setInputs] = useState(fields);
   const [fieldValues, setFieldValues] = useState(undefined);
+
+  const [addField, { data }] = useMutation(ADD_FIELD);
+  const [updateField] = useMutation(UPDATE_FIELD);
 
   useEffect(() => {
     setInputs(fields || {});
@@ -167,12 +191,27 @@ const Buildable = (props) => {
                     type: 'input',
                     label,
                     name: _.snakeCase(label),
+                    formId: '82d38f92-14a5-4107-b7f3-a0374b3eaf42',
                     ...rest,
                   };
 
                   if (isPersisted) {
+                    updateField({
+                      variables: {
+                        id: fieldParams.id,
+                        field: {
+                          type: fieldParams.type,
+                          label: fieldParams.label,
+                          name: fieldParams.name,
+                          required: fieldParams.required,
+                          description: fieldParams.description,
+                          formId: fieldParams.formId,
+                        },
+                      },
+                    });
                     form.mutators.update('fields', fieldIndex, fieldParams);
                   } else {
+                    addField({ variables: { field: fieldParams } });
                     form.mutators.push('fields', fieldParams);
                   }
 
