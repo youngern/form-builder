@@ -1,34 +1,36 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Text } from 'react-native';
+import { useQuery, gql } from '@apollo/client';
 import Fill from './components/Fill';
-import api from '~/src/services/api';
 import Logger from '~/src/services/Logger';
 
-class Edit extends Component {
-  state = {};
-
-  componentDidMount() {
-    this.fetch();
+const PROFILE = gql`
+  query forms {
+    forms: form {
+      id
+      name
+      description
+      fields {
+        type
+        label
+        name
+        required
+        description
+        id
+      }
+    }
   }
+`;
 
-  fetch = async () => {
-    this.setState({ loading: true });
-    const fields = await api.get();
-    Logger.log('get fields: view', fields);
-    this.setState({ loading: false, fields });
-  };
+function View() {
+  const { loading, error, data } = useQuery(PROFILE);
 
-  setValues = async (values) => {
-    this.setState({ loading: true, fields: values });
-    await api.set(values);
-    Logger.log('set values', values);
-    this.setState({ loading: false });
-  };
+  if (loading) return <Text>Loading...</Text>;
+  if (error) return <Text>Error :(</Text>;
 
-  render() {
-    const { fields = [] } = this.state;
-
-    return <Fill fields={fields} onSubmit={this.setValues} />;
-  }
+  return (
+    <Fill fields={data.forms[0]} onSubmit={(v) => Logger.log('values', v)} />
+  );
 }
 
-export default Edit;
+export default View;

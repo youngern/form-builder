@@ -28,8 +28,6 @@ const Buildable = (props) => {
     Logger.log('save', values);
   };
 
-  Logger.log('fields', fields);
-
   return (
     <>
       <Form
@@ -49,10 +47,10 @@ const Buildable = (props) => {
                     touched: true,
                     error: true,
                   }}
-                  name="form_name"
+                  name="name"
                   placeholder="Form Name"
                   validate={required}
-                  initialValue={fields.form_name}>
+                  initialValue={fields.name}>
                   {({ input, meta, ...rest }) => {
                     const error = (meta.touched && meta.error) || undefined;
 
@@ -78,8 +76,8 @@ const Buildable = (props) => {
                     touched: true,
                     error: true,
                   }}
-                  name="form_description"
-                  initialValue={fields.form_description}>
+                  name="description"
+                  initialValue={fields.description}>
                   {({ input, meta, ...rest }) => {
                     const error = (meta.touched && meta.error) || undefined;
 

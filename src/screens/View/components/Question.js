@@ -10,8 +10,6 @@ import Logger from '~/src/services/Logger';
 
 const Question = (values) => {
   const { name, placeholder } = values;
-
-  Logger.log('values', values);
   return (
     <>
       <Field name={`${name}.label`}>
@@ -33,7 +31,6 @@ const Question = (values) => {
               error: true,
             }}>
             {({ input, meta, ...rest }) => {
-              Logger.log('rest', input, rest);
               return <Input {...input} {...rest} />;
             }}
           </Field>

@@ -53,10 +53,10 @@ const Buildable = (props) => {
                     touched: true,
                     error: true,
                   }}
-                  name="form_name"
+                  name="name"
                   placeholder="Form Name"
                   validate={required}
-                  initialValue={inputs.form_name}>
+                  initialValue={inputs.name}>
                   {({ input, meta, ...rest }) => {
                     const error = (meta.touched && meta.error) || undefined;
 
@@ -81,9 +81,9 @@ const Buildable = (props) => {
                     touched: true,
                     error: true,
                   }}
-                  name="form_description"
+                  name="description"
                   placeholder="Enter a description for your form..."
-                  initialValue={inputs.form_description}>
+                  initialValue={inputs.description}>
                   {({ input, meta, ...rest }) => {
                     const error = (meta.touched && meta.error) || undefined;
 
@@ -108,7 +108,6 @@ const Buildable = (props) => {
                 <SafeAreaView>
                   <FieldArray name="fields" initialValue={inputs.fields}>
                     {({ fields }) => {
-                      Logger.log('rerender', fields);
                       return fields.map((name, index) => (
                         <TouchableOpacity
                           key={name}
