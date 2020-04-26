@@ -40,7 +40,7 @@ exports[`renders correctly with initial values 1`] = `
           }
         }
       >
-        LABEL
+        label
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -93,7 +93,7 @@ exports[`renders correctly with initial values 1`] = `
           }
         }
       >
-        DESCRIPTION
+        description
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -146,7 +146,7 @@ exports[`renders correctly with initial values 1`] = `
           }
         }
       >
-        PLACEHOLDER
+        placeholder
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -199,7 +199,7 @@ exports[`renders correctly with initial values 1`] = `
           }
         }
       >
-        INITIAL VALUE
+        initialValue
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -252,7 +252,7 @@ exports[`renders correctly with initial values 1`] = `
           }
         }
       >
-        REQUIRED
+        required
       </Text>
       <View
         style={
@@ -383,7 +383,7 @@ exports[`renders correctly without initial values 1`] = `
           }
         }
       >
-        LABEL
+        label
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -436,7 +436,7 @@ exports[`renders correctly without initial values 1`] = `
           }
         }
       >
-        DESCRIPTION
+        description
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -489,7 +489,7 @@ exports[`renders correctly without initial values 1`] = `
           }
         }
       >
-        PLACEHOLDER
+        placeholder
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -542,7 +542,7 @@ exports[`renders correctly without initial values 1`] = `
           }
         }
       >
-        INITIAL VALUE
+        initialValue
       </Text>
       <TextInput
         allowFontScaling={true}
@@ -595,7 +595,7 @@ exports[`renders correctly without initial values 1`] = `
           }
         }
       >
-        REQUIRED
+        required
       </Text>
       <View
         style={
